@@ -29,7 +29,7 @@ public class ScreenTouch : MonoBehaviour
             m_touchPosition.z = transform.position.z;
 
             GameObject clone = Instantiate(touchEffect, m_touchPosition, Quaternion.identity);
-            Destroy(clone, 0.5f);
+            Destroy(clone, 0.2f);
         }
     }
 

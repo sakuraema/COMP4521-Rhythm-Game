@@ -7,16 +7,14 @@ public class Scroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_MovementSpeed = BPM;
-        transform.position = new Vector3 (0, 0, 670);
+        transform.position = new Vector3 (0.0f, 0.0f, 300.0f * (BPM / 60.0f) * (50.0f / 60.0f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(0.0f, 0.0f, m_MovementSpeed * Time.deltaTime * GameManager.speedOffset);
+        transform.position -= new Vector3(0.0f, 0.0f, BPM * Time.deltaTime * (50.0f / 60.0f));
     }
 
     public int BPM;
-    private float m_MovementSpeed;
 }

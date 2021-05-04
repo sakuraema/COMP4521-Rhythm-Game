@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPlayer : MonoBehaviour
+public class GameCamera : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        musicSource.PlayDelayed(5.0f);
         m_Time = -5.0f;
     }
 
@@ -15,10 +14,12 @@ public class MusicPlayer : MonoBehaviour
     void Update()
     {
         m_Time += Time.deltaTime;
-        if (m_Time > 30.0f)
-            StartCoroutine(AudioFade.StartFade(musicSource, 2.0f, 0.0f));
+        if (m_Time > 10.0f)
+        {
+            GetComponent<Animator>().gameObject.SetActive(true);
+        }
     }
-    
-    public AudioSource musicSource;
+
+    public Animator animator;
     private float m_Time;
 }

@@ -16,5 +16,5 @@ public class GameManager : MonoBehaviour
         
     }
 
-    static public float speedOffset = 0.85f;
+    static public float s_SpeedOffset = 1.0f;
 }

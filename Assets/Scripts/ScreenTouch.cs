@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class ScreenTouch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -35,7 +29,7 @@ public class ScreenTouch : MonoBehaviour
             m_touchPosition.z = transform.position.z;
 
             GameObject clone = Instantiate(touchEffect, m_touchPosition, Quaternion.identity);
-            Destroy(clone, 0.5f);
+            Destroy(clone, 0.2f);
         }
     }
 

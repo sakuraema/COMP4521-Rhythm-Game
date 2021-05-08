@@ -15,8 +15,8 @@ public class MusicPlayer : MonoBehaviour
     void Update()
     {
         m_Time += Time.deltaTime;
-        if (m_Time > 30.0f)
-            StartCoroutine(AudioFade.StartFade(musicSource, 2.0f, 0.0f));
+        //if (m_Time > 30.0f)
+            //StartCoroutine(AudioFade.StartFade(musicSource, 2.0f, 0.0f));
     }
     
     public AudioSource musicSource;

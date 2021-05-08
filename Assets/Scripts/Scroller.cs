@@ -30,7 +30,7 @@ public class Scroller : Singleton<Scroller>
 		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
 	}
 
-	void Start()
+	protected override void Awake()
     {
 		m_TrackLength = startingLine.position.z - endingLine.position.z;
 		m_Velocity = new Vector3(0, 0, -m_TrackLength - speed);
@@ -38,19 +38,19 @@ public class Scroller : Singleton<Scroller>
 		{
 			spawnPoint[i].z = m_TrackLength;
 		}
-
+		spawnDelay -= 1 + speed / m_TrackLength;
 		Invoke(nameof(StartSpawning), spawnDelay);
         //transform.position = new Vector3 (0.0f, 0.0f, 300.0f * (BPM / 60.0f) * (50.0f / 60.0f));
     }
 
 	// Update is called once per frame
-	void Update()
+	void FixedUpdate()
     {
-		m_SpawnBarTimer?.Tick(Time.deltaTime);
+		m_SpawnBarTimer?.Tick(Time.fixedDeltaTime);
 		for (int i = m_ActiveBars.Count - 1; i >= 0; i--)
 		{
 			var bar = m_ActiveBars[i];
-			bar.transform.position += m_Velocity * Time.deltaTime;
+			bar.transform.position += m_Velocity * Time.fixedDeltaTime;
 			
 			if (bar.transform.position.z < -m_TrackLength)
 			{

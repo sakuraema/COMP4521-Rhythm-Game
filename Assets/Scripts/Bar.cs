@@ -30,9 +30,9 @@ public class Bar : MonoBehaviour
 		{
 			audioSource.PlayOneShot(clap);
 			played = true;
-            //Debug.Log("Difference" + (Time.time - m_CheckField));
-            //m_CheckField = Time.time;
-        }
+			Debug.Log("Difference" + (Time.time - m_CheckField));
+			m_CheckField = Time.time;
+		}
     }
 
     private void OnTriggerEnter(Collider other)

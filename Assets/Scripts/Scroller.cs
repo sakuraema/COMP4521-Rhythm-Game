@@ -5,8 +5,8 @@ using Core.Utilities;
 public class Scroller : Singleton<Scroller>
 {
 	public float BPM;
-	public int count;
 	public int speed;
+	public float spawnDelay;
 	public Vector3[] spawnPoint;
 	public Poolable barPoolable;
 	public Transform startingLine;
@@ -19,29 +19,34 @@ public class Scroller : Singleton<Scroller>
 
 	void SpawnBar()
 	{
-		Debug.Log("Spawning Bar");
 		var spawningBar = PoolManager.instance.GetPoolable(barPoolable).GetComponent<Bar>();
 		spawningBar.gameObject.SetActive(true);
 		spawningBar.transform.position = spawnPoint[Random.Range(0, spawnPoint.Length)];
 		m_ActiveBars.Add(spawningBar);
+	}
+	
+	void StartSpawning()
+	{
+		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
 	}
 
 	void Start()
     {
 		m_TrackLength = startingLine.position.z - endingLine.position.z;
 		m_Velocity = new Vector3(0, 0, -m_TrackLength - speed);
-		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
 		for (int i = 0; i < spawnPoint.Length; i++)
 		{
 			spawnPoint[i].z = m_TrackLength;
 		}
+
+		Invoke(nameof(StartSpawning), spawnDelay);
         //transform.position = new Vector3 (0.0f, 0.0f, 300.0f * (BPM / 60.0f) * (50.0f / 60.0f));
     }
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
-		m_SpawnBarTimer.Tick(Time.deltaTime);
+		m_SpawnBarTimer?.Tick(Time.deltaTime);
 		for (int i = m_ActiveBars.Count - 1; i >= 0; i--)
 		{
 			var bar = m_ActiveBars[i];

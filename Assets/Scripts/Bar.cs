@@ -8,7 +8,10 @@ public class Bar : MonoBehaviour
 
 	private AudioSource audioSource;
 	private bool played;
-	private void Start()
+
+    public bool m_CanBePressed;
+	
+    private void Start()
 	{
 		audioSource = GetComponent<AudioSource>();
 	}
@@ -29,4 +32,19 @@ public class Bar : MonoBehaviour
 		}
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Activator")
+        {
+            m_CanBePressed = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Activator")
+        {
+            m_CanBePressed = false;
+        }
+    }
 }

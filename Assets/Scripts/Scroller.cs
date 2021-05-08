@@ -13,9 +13,11 @@ public class Scroller : Singleton<Scroller>
 	public Transform endingLine;
 
 	private RepeatingTimer m_SpawnBarTimer;
+	private Timer m_SpawnDelayTimer;
 	private List<Bar> m_ActiveBars = new List<Bar>();
 	private Vector3 m_Velocity;
 	private float m_TrackLength;
+	private float m_Delay;
 
 	void SpawnBar()
 	{
@@ -27,25 +29,27 @@ public class Scroller : Singleton<Scroller>
 	
 	void StartSpawning()
 	{
+		m_SpawnDelayTimer = null;
 		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
+		Debug.Log("Start spawning at " + Time.time);
 	}
 
 	protected override void Awake()
     {
 		m_TrackLength = startingLine.position.z - endingLine.position.z;
-		m_Velocity = new Vector3(0, 0, -speed);
+		m_Velocity = new Vector3(0, 0, -speed); // 100
 		for (int i = 0; i < spawnPoint.Length; i++)
 		{
 			spawnPoint[i].z = m_TrackLength;
 		}
-		spawnDelay -= m_TrackLength / speed;
-		Invoke(nameof(StartSpawning), spawnDelay);
-        //transform.position = new Vector3 (0.0f, 0.0f, 300.0f * (BPM / 60.0f) * (50.0f / 60.0f));
-    }
+		m_Delay = spawnDelay - m_TrackLength / speed;
+		m_SpawnDelayTimer = new Timer(m_Delay, StartSpawning);
+		//transform.position = new Vector3 (0.0f, 0.0f, 300.0f * (BPM / 60.0f) * (50.0f / 60.0f));
+	}
 
-	// Update is called once per frame
 	void FixedUpdate()
     {
+		m_SpawnDelayTimer?.Tick(Time.fixedDeltaTime);
 		m_SpawnBarTimer?.Tick(Time.fixedDeltaTime);
 		for (int i = m_ActiveBars.Count - 1; i >= 0; i--)
 		{

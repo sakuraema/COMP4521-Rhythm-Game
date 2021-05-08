@@ -33,12 +33,12 @@ public class Scroller : Singleton<Scroller>
 	protected override void Awake()
     {
 		m_TrackLength = startingLine.position.z - endingLine.position.z;
-		m_Velocity = new Vector3(0, 0, -m_TrackLength - speed);
+		m_Velocity = new Vector3(0, 0, -speed);
 		for (int i = 0; i < spawnPoint.Length; i++)
 		{
 			spawnPoint[i].z = m_TrackLength;
 		}
-		spawnDelay -= 1 + speed / m_TrackLength;
+		spawnDelay -= m_TrackLength / speed;
 		Invoke(nameof(StartSpawning), spawnDelay);
         //transform.position = new Vector3 (0.0f, 0.0f, 300.0f * (BPM / 60.0f) * (50.0f / 60.0f));
     }

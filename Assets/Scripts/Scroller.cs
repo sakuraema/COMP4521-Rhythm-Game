@@ -37,7 +37,7 @@ public class Scroller : Singleton<Scroller>
 	protected override void Awake()
     {
 		m_TrackLength = startingLine.position.z - endingLine.position.z;
-		m_Velocity = new Vector3(0, 0, -speed); // 100
+		m_Velocity = new Vector3(0, 0, -speed);
 		for (int i = 0; i < spawnPoint.Length; i++)
 		{
 			spawnPoint[i].z = m_TrackLength;

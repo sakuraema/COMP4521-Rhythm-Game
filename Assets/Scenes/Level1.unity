@@ -1282,118 +1282,73 @@ MonoBehaviour:
     tracks: 01000100
   - type: 0
     delay: 0.234375
-    tracks: 00000100
+    tracks: 00000001
   - type: 0
     delay: 0.234375
     tracks: 00000100
   - type: 0
     delay: 0.234375
-    tracks: 00000100
+    tracks: 01000000
   - type: 0
     delay: 0.234375
-    tracks: 00000100
+    tracks: 00010000
   - type: 0
     delay: 0.234375
-    tracks: 00000100
+    tracks: 00000001
   - type: 0
     delay: 0.234375
-    tracks: 00000100
+    tracks: 01000000
   - type: 0
     delay: 0.234375
     tracks: 00000100
   - type: 0
     delay: 0.46875
-    tracks: 00000100
+    tracks: 00000001
   - type: 0
     delay: 0.3515625
-    tracks: 00000100
+    tracks: 00010000
   - type: 0
     delay: 0.1171875
     tracks: 00000100
   - type: 0
     delay: 0.234375
-    tracks: 00000100
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
   - type: 0
     delay: 0.234375
     tracks: 00000100
   - type: 0
     delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000100
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000100
-  - type: 0
-    delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.234375
-    tracks: 00000100
-  - type: 0
-    delay: 0.46875
-    tracks: 01000001
-  - type: 0
-    delay: 0.3515625
     tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
   - type: 0
     delay: 0.1171875
     tracks: 00000001
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 00000100
   - type: 0
     delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.46875
     tracks: 01000001
@@ -1402,235 +1357,280 @@ MonoBehaviour:
     tracks: 00000001
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
   - type: 0
     delay: 0.234375
     tracks: 00000001
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
   - type: 0
     delay: 0.234375
     tracks: 00000001
   - type: 0
     delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
     tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.46875
+    tracks: 01000100
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
   - type: 0
     delay: 0.46875
     tracks: 01000001
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 01000000
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 00000100
   - type: 0
     delay: 0.46875
-    tracks: 01000001
+    tracks: 00010001
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00000100
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010001
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 01000001
   - type: 0
     delay: 1.40625
-    tracks: 01000001
+    tracks: 00010100
   - type: 0
     delay: 0.1171875
     tracks: 00000001
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00000100
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.234375
-    tracks: 01000001
+    tracks: 00000101
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 00010000
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 01010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
   - type: 0
     delay: 0.3515625
     tracks: 00000001
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.3515625
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
+    tracks: 01000100
   - type: 0
     delay: 0.234375
     tracks: 00000001
   - type: 0
     delay: 0.3515625
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000101
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.3515625
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01010000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.3515625
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000101
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
     tracks: 00000001
   - type: 0
     delay: 0.1171875
     tracks: 00000001
   - type: 0
     delay: 0.234375
-    tracks: 01000001
+    tracks: 01000100
   - type: 0
     delay: 0.234375
     tracks: 00000001
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 00010001
   - type: 0
     delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
+    tracks: 00000100
   - type: 0
     delay: 0.3515625
     tracks: 00000001
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.234375
-    tracks: 01000001
+    tracks: 00010100
   - type: 0
     delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.3515625
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.3515625
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
+    tracks: 01000000
   - type: 0
     delay: 0.234375
     tracks: 00000001
   - type: 0
     delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.3515625
-    tracks: 00000001
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 01000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
-  - type: 0
-    delay: 0.234375
-    tracks: 00000001
+    tracks: 01000000
   - type: 0
     delay: 0.46875
-    tracks: 01000001
+    tracks: 00000101
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 01000000
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 00000100
   - type: 0
     delay: 0.46875
-    tracks: 01000001
+    tracks: 01000100
   - type: 0
     delay: 0.1171875
     tracks: 00000001
   - type: 0
     delay: 0.1171875
-    tracks: 00000001
+    tracks: 00010000
   - type: 0
     delay: 0.234375
-    tracks: 00000001
+    tracks: 00000100
   - type: 0
     delay: 0.234375
     tracks: 01000001

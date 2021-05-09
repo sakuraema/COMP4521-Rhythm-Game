@@ -71,7 +71,8 @@ namespace Core.Utilities
 		/// </summary>
 		public void Reset()
 		{
-			m_CurrentTime = Mathf.Max(0f, m_CurrentTime - m_Time);
+			//m_CurrentTime = Mathf.Max(0f, m_CurrentTime - m_Time);
+			m_CurrentTime = 0;
 		}
 
 		/// <summary>

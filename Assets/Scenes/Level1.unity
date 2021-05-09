@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BPM: 128
-  speed: 100
+  speed: 150
   spawnDelay: 4.9
   spawnPoint:
   - {x: -3.75, y: 0, z: 90}
@@ -810,7 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beats:
   - type: 0
-    delay: 1.40625
+    delay: 0.46875
     tracks: 00010000
   - type: 0
     delay: 0.46875
@@ -822,16 +822,16 @@ MonoBehaviour:
     delay: 0.46875
     tracks: 00010000
   - type: 0
-    delay: 0.46875
+    delay: 0.234375
     tracks: 00000001
   - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 00000100
   - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 01000000
   - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 00000001
   - type: 0
     delay: 0.46875
@@ -840,43 +840,43 @@ MonoBehaviour:
     delay: 0.46875
     tracks: 00000100
   - type: 0
-    delay: 0.9375
+    delay: 0.46875
     tracks: 00010000
   - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 00000001
   - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 00010000
   - type: 0
-    delay: 0.46875
+    delay: 0.234375
     tracks: 01000001
   - type: 0
-    delay: 0.46875
+    delay: 0.703125
     tracks: 00000100
   - type: 0
-    delay: 0.46875
+    delay: 0.234375
     tracks: 01000000
   - type: 0
-    delay: 0.1171875
-    tracks: 00010000
-  - type: 0
-    delay: 0.1171875
-    tracks: 00000100
-  - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 00010000
   - type: 0
     delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.46875
     tracks: 00010100
   - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 00010000
   - type: 0
-    delay: 0.1171875
+    delay: 0.234375
     tracks: 00000100
   - type: 0
-    delay: 0.234375
+    delay: 0.46875
     tracks: 01000100
   - type: 0
     delay: 0.05859375
@@ -885,10 +885,382 @@ MonoBehaviour:
     delay: 0.4101563
     tracks: 00010000
   - type: 0
+    delay: 0.1171875
+    tracks: 01000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010001
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.3515625
+    tracks: 00010100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 01000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
     delay: 0.46875
     tracks: 01000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.46875
+    tracks: 00010100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.46875
+    tracks: 01000100
   BGM: 128
-  snap: 0
+  snap: 1
 --- !u!4 &789795295
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,6 +1521,7 @@ GameObject:
   - component: {fileID: 1112283004}
   - component: {fileID: 1112283003}
   - component: {fileID: 1112283006}
+  - component: {fileID: 1112283007}
   m_Layer: 8
   m_Name: Track Plane (2)
   m_TagString: Untagged
@@ -1248,6 +1621,104 @@ MonoBehaviour:
   detectors:
   - {fileID: 2032680412}
   key: 106
+  clip: {fileID: 8300000, guid: eade6106c4de613458e6b35b0725f2a4, type: 3}
+--- !u!82 &1112283007
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112283001}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 622684587700732203, guid: e427ca6d50c074041ad8b74495fb0049,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1234678299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1820,7 @@ GameObject:
   - component: {fileID: 1484910182}
   - component: {fileID: 1484910181}
   - component: {fileID: 1484910184}
+  - component: {fileID: 1484910185}
   m_Layer: 8
   m_Name: Track Plane (3)
   m_TagString: Untagged
@@ -1448,6 +1920,104 @@ MonoBehaviour:
   detectors:
   - {fileID: 1524124987}
   key: 107
+  clip: {fileID: 8300000, guid: eade6106c4de613458e6b35b0725f2a4, type: 3}
+--- !u!82 &1484910185
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484910179}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 622684587700732203, guid: e427ca6d50c074041ad8b74495fb0049,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1523846435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +2145,7 @@ GameObject:
   - component: {fileID: 1723682378}
   - component: {fileID: 1723682377}
   - component: {fileID: 1723682380}
+  - component: {fileID: 1723682381}
   m_Layer: 8
   m_Name: Track Plane (1)
   m_TagString: Untagged
@@ -1674,6 +2245,104 @@ MonoBehaviour:
   detectors:
   - {fileID: 1523846437}
   key: 102
+  clip: {fileID: 8300000, guid: eade6106c4de613458e6b35b0725f2a4, type: 3}
+--- !u!82 &1723682381
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723682375}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 622684587700732203, guid: e427ca6d50c074041ad8b74495fb0049,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1741790119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +2430,7 @@ GameObject:
   - component: {fileID: 1894923250}
   - component: {fileID: 1894923249}
   - component: {fileID: 1894923253}
+  - component: {fileID: 1894923254}
   m_Layer: 8
   m_Name: Track Plane
   m_TagString: Untagged
@@ -1860,6 +2530,104 @@ MonoBehaviour:
   detectors:
   - {fileID: 1994180558}
   key: 100
+  clip: {fileID: 8300000, guid: eade6106c4de613458e6b35b0725f2a4, type: 3}
+--- !u!82 &1894923254
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894923248}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 622684587700732203, guid: e427ca6d50c074041ad8b74495fb0049,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1927742432
 GameObject:
   m_ObjectHideFlags: 0

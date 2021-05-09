@@ -31,13 +31,12 @@ public class Scroller : Singleton<Scroller>
 	{
 		m_SpawnDelayTimer = null;
 		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
-		Debug.Log("Start spawning at " + Time.time);
 	}
 
 	protected override void Awake()
     {
 		m_TrackLength = startingLine.position.z - endingLine.position.z;
-		m_Velocity = new Vector3(0, 0, -speed); // 100
+		m_Velocity = new Vector3(0, 0, -speed);
 		for (int i = 0; i < spawnPoint.Length; i++)
 		{
 			spawnPoint[i].z = m_TrackLength;

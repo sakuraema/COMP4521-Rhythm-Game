@@ -10,7 +10,6 @@ public class Bar : MonoBehaviour
 	private bool played;
 
     private bool m_CanBePressed;
-    private static float m_CheckField;
 	
     private void Start()
 	{
@@ -30,8 +29,6 @@ public class Bar : MonoBehaviour
 		{
 			audioSource.PlayOneShot(clap);
 			played = true;
-			Debug.Log("Difference" + (Time.time - m_CheckField));
-			m_CheckField = Time.time;
 		}
     }
 

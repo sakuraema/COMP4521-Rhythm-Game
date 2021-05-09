@@ -1,24 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Utilities;
 
 public class MusicPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource musicSource;
+    private Timer m_SpawnDelayTimer;
+    private float m_Time;
+
+    void Awake()
     {
-        musicSource.PlayDelayed(5.0f);
-        m_Time = -5.0f;
+        m_SpawnDelayTimer = new Timer(5f, PlayMusic);
+        m_Time = -5f;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        m_Time += Time.deltaTime;
+        m_SpawnDelayTimer?.Tick(Time.fixedDeltaTime);
+        //m_Time += Time.fixedDeltaTime;
         //if (m_Time > 30.0f)
             //StartCoroutine(AudioFade.StartFade(musicSource, 2.0f, 0.0f));
     }
-    
-    public AudioSource musicSource;
-    private float m_Time;
+
+    void PlayMusic()
+    {
+        musicSource.Play();
+        m_SpawnDelayTimer = null;
+    }
 }

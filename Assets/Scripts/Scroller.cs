@@ -18,16 +18,37 @@ public class Scroller : Singleton<Scroller>
 	private Vector3 m_Velocity;
 	private float m_TrackLength;
 	private float m_Delay;
+	private List<Beat> m_Beatmap;
+	private int m_BeatCount = 0;
 
-	void SpawnBar()
+	public void ReturnBarToPool(Bar bar)
 	{
-		var spawningBar = PoolManager.instance.GetPoolable(barPoolable).GetComponent<Bar>();
-		spawningBar.gameObject.SetActive(true);
-		spawningBar.transform.position = spawnPoint[Random.Range(0, spawnPoint.Length)];
-		m_ActiveBars.Add(spawningBar);
+		bar.Reset();
+		PoolManager.instance.ReturnPoolable(bar.GetComponent<Poolable>());
+		m_ActiveBars.Remove(bar);
+	}
+
+	protected void SpawnBar()
+	{
+		if (m_BeatCount >= m_Beatmap.Count)
+		{
+			m_SpawnBarTimer = null;
+			return;
+		}
+		for (int i = 0; i < 4; i++)
+		{
+			if (m_Beatmap[m_BeatCount].tracks[i])
+			{
+				var bar = PoolManager.instance.GetPoolable(barPoolable).GetComponent<Bar>();
+				bar.gameObject.SetActive(true);
+				bar.transform.position = spawnPoint[i];
+				m_ActiveBars.Add(bar);
+			}
+		}
+		m_BeatCount++;
 	}
 	
-	void StartSpawning()
+	protected void StartSpawning()
 	{
 		m_SpawnDelayTimer = null;
 		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
@@ -35,6 +56,7 @@ public class Scroller : Singleton<Scroller>
 
 	protected override void Awake()
     {
+		base.Awake();
 		m_TrackLength = startingLine.position.z - endingLine.position.z;
 		m_Velocity = new Vector3(0, 0, -speed);
 		for (int i = 0; i < spawnPoint.Length; i++)
@@ -43,10 +65,10 @@ public class Scroller : Singleton<Scroller>
 		}
 		m_Delay = spawnDelay - m_TrackLength / speed;
 		m_SpawnDelayTimer = new Timer(m_Delay, StartSpawning);
-		//transform.position = new Vector3 (0.0f, 0.0f, 300.0f * (BPM / 60.0f) * (50.0f / 60.0f));
+		m_Beatmap = Beatmap.instance.beats;
 	}
 
-	void FixedUpdate()
+	protected virtual void FixedUpdate()
     {
 		m_SpawnDelayTimer?.Tick(Time.fixedDeltaTime);
 		m_SpawnBarTimer?.Tick(Time.fixedDeltaTime);
@@ -57,11 +79,8 @@ public class Scroller : Singleton<Scroller>
 			
 			if (bar.transform.position.z < -m_TrackLength)
 			{
-				bar.Reset();
-				PoolManager.instance.ReturnPoolable(bar.GetComponent<Poolable>());
-				m_ActiveBars.Remove(bar);
+				ReturnBarToPool(bar);
 			}
 		}
-        //transform.position -= new Vector3(0.0f, 0.0f, BPM * Time.deltaTime * (50.0f / 60.0f));
     }
 }

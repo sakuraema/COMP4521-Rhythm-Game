@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6164769198511524486}
   - component: {fileID: 6164769198511524487}
   - component: {fileID: 1421272103269218863}
-  - component: {fileID: 6164769198511524484}
   - component: {fileID: 6164769198511524485}
   - component: {fileID: 6164769198511524482}
   - component: {fileID: 8191261032263146712}
+  - component: {fileID: 7830712905092188625}
   m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
@@ -100,19 +100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!65 &6164769198511524484
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6164769198511524483}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 1, z: 1}
-  m_Center: {x: 0.15, y: 0, z: 0}
 --- !u!114 &6164769198511524485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,3 +223,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPoolCapacity: 10
+--- !u!65 &7830712905092188625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164769198511524483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

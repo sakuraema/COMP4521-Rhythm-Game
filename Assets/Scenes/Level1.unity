@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BPM: 110
   speed: 100
-  spawnDelay: 5
+  spawnDelay: 5.5
   spawnPoint:
   - {x: 1.25, y: 0, z: 90}
   - {x: -1.25, y: 0, z: 90}

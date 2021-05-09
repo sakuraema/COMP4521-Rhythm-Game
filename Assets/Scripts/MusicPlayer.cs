@@ -7,12 +7,12 @@ public class MusicPlayer : MonoBehaviour
 {
     public AudioSource musicSource;
     private Timer m_SpawnDelayTimer;
-    private float m_Time;
+    //private float m_Time;
 
     void Awake()
     {
         m_SpawnDelayTimer = new Timer(5f, PlayMusic);
-        m_Time = -5f;
+        //m_Time = -5f;
     }
 
     void FixedUpdate()

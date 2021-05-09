@@ -1257,8 +1257,383 @@ MonoBehaviour:
     delay: 0.234375
     tracks: 00000100
   - type: 0
-    delay: 0.46875
+    delay: 0.9375
     tracks: 01000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00010100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 01000000
+  - type: 0
+    delay: 0.1171875
+    tracks: 00010000
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.46875
+    tracks: 00000100
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.234375
+    tracks: 00000100
+  - type: 0
+    delay: 0.46875
+    tracks: 01000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.46875
+    tracks: 01000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.46875
+    tracks: 01000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.46875
+    tracks: 01000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 1.40625
+    tracks: 01000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.3515625
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.46875
+    tracks: 01000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.46875
+    tracks: 01000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.1171875
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 00000001
+  - type: 0
+    delay: 0.234375
+    tracks: 01000001
   BGM: 128
   snap: 1
 --- !u!4 &789795295

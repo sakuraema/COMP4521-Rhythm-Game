@@ -45,6 +45,7 @@ public class Scroller : Singleton<Scroller>
 				m_ActiveBars.Add(bar);
 			}
 		}
+		m_SpawnBarTimer.SetTime(m_Beatmap[m_BeatCount].delay);
 		m_BeatCount++;
 	}
 	
@@ -69,18 +70,34 @@ public class Scroller : Singleton<Scroller>
 	}
 
 	protected virtual void FixedUpdate()
-    {
+	{
 		m_SpawnDelayTimer?.Tick(Time.fixedDeltaTime);
 		m_SpawnBarTimer?.Tick(Time.fixedDeltaTime);
 		for (int i = m_ActiveBars.Count - 1; i >= 0; i--)
 		{
 			var bar = m_ActiveBars[i];
 			bar.transform.position += m_Velocity * Time.fixedDeltaTime;
-			
+
 			if (bar.transform.position.z < -m_TrackLength)
 			{
 				ReturnBarToPool(bar);
 			}
 		}
-    }
+	}
+
+	//protected virtual void Update()
+	//{
+	//	m_SpawnDelayTimer?.Tick(Time.deltaTime);
+	//	m_SpawnBarTimer?.Tick(Time.deltaTime);
+	//	for (int i = m_ActiveBars.Count - 1; i >= 0; i--)
+	//	{
+	//		var bar = m_ActiveBars[i];
+	//		bar.transform.position += m_Velocity * Time.deltaTime;
+
+	//		if (bar.transform.position.z < -m_TrackLength)
+	//		{
+	//			ReturnBarToPool(bar);
+	//		}
+	//	}
+	//}
 }

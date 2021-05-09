@@ -8,22 +8,47 @@ public class Track : MonoBehaviour
 	public Material selected;
 	public BarDetector[] detectors;
 	public KeyCode key;
+	public AudioClip clip;
 
 	private float m_PerfectDistance;
 	private float m_EffectiveDistance;
+	private AudioSource m_AudioSource;
 
 	protected void Awake()
 	{
-		m_EffectiveDistance = Scroller.instance.speed / 40f / 2f;
-		m_PerfectDistance = m_EffectiveDistance / 2f;
+		m_AudioSource = GetComponent<AudioSource>();
+		m_EffectiveDistance = Scroller.instance.speed / 10f / 2f;
+		m_PerfectDistance = m_EffectiveDistance / 4f;
 		foreach (var item in detectors)
 		{
-			item.GetComponent<BoxCollider>().size = new Vector3(2f, 1f, Scroller.instance.speed / 40f);
+			item.GetComponent<BoxCollider>().size = new Vector3(2f, 1f, Scroller.instance.speed / 10f);
 		}
 	}
 
 	protected void Update()
 	{
+		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(key))
+		{
+			foreach (var detector in detectors)
+			{
+				if (detector.BarInside.Count > 0)
+				{
+					float distance = Mathf.Abs(detector.BarInside[0].transform.position.z);
+					if (distance < m_PerfectDistance)
+					{
+						Debug.Log("Perfect");
+						m_AudioSource.PlayOneShot(clip);
+					}
+					else
+					{
+						Debug.Log("Good");
+						m_AudioSource.PlayOneShot(clip);
+					}
+					detector.Remove(detector.BarInside[0]);
+				}
+			}
+		}
+
 		if (Input.GetMouseButton(0))
 		{
 			RaycastHit hitInfo;
@@ -50,24 +75,6 @@ public class Track : MonoBehaviour
 
 	protected void FixedUpdate()
 	{
-		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(key))
-		{
-			foreach (var detector in detectors)
-			{
-				if (detector.BarInside.Count > 0)
-				{
-					float distance = Mathf.Abs(detector.BarInside[0].transform.position.z);
-					if (distance < m_PerfectDistance)
-					{
-						Debug.Log("Perfect");
-					}
-					else
-					{
-						Debug.Log("Good");
-					}
-					detector.Remove(detector.BarInside[0]);
-				}
-			}
-		}
+
 	}
 }

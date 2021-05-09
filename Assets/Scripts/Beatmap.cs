@@ -1,8 +1,18 @@
+using Core.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beatmap : MonoBehaviour
+public class Beatmap : Singleton<Beatmap>
 {
-	public List<Beat> beats;
+	public enum Snap
+	{
+		Full,
+		Half,
+		Quarter,
+		OneThird
+	}
+	public List<Beat> beats = new List<Beat>();
+	public float BGM;
+	public Snap snap;
 }

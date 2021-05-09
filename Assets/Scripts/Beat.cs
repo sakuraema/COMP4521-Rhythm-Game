@@ -1,5 +1,6 @@
+using UnityEngine;
 
-
+[System.Serializable]
 public class Beat
 {
 	[System.Serializable]
@@ -9,6 +10,7 @@ public class Beat
 		Slide,
 	}
 
-	BeatType type;
-	int index = 0;
+	public BeatType type;
+	public float delay;
+	public bool[] tracks;
 }

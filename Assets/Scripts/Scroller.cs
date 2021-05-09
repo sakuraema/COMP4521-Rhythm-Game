@@ -31,7 +31,6 @@ public class Scroller : Singleton<Scroller>
 	{
 		m_SpawnDelayTimer = null;
 		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
-		Debug.Log("Start spawning at " + Time.time);
 	}
 
 	protected override void Awake()

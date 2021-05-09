@@ -26,8 +26,8 @@ public class Bar : MonoBehaviour
     {
         if (transform.position.z <= 0 && !played)
 		{
-			audioSource.PlayOneShot(clap);
-			played = true;
+			//audioSource.PlayOneShot(clap);
+			//played = true;
 		}
     }
 }

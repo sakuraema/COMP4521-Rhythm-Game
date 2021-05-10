@@ -17,11 +17,11 @@ public class Track : MonoBehaviour
 	protected void Awake()
 	{
 		m_AudioSource = GetComponent<AudioSource>();
-		m_EffectiveDistance = TestScroller.instance.Speed / 2f / 2f;
+		m_EffectiveDistance = Scroller.instance.speed / 10f / 2f;
 		m_PerfectDistance = m_EffectiveDistance / 2f;
 		foreach (var item in detectors)
 		{
-			item.GetComponent<BoxCollider>().size = new Vector3(2f, 1f, m_EffectiveDistance * 2f);
+			item.GetComponent<BoxCollider>().size = new Vector3(2f, 1f, Scroller.instance.speed / 10f);
 		}
 	}
 

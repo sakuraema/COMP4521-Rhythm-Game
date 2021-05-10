@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bar : MonoBehaviour
 {
-	private bool played;
+	protected bool played;
 
 	public virtual void Reset()
 	{

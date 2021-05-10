@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 8f;
+	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 2f;
 
 	public Material original;
 	public Material selected;
-	public BarDetector[] detectors;
+	public Detector[] detectors;
 	public KeyCode key;
 
 	private float m_PerfectDistance;
@@ -27,7 +27,16 @@ public class Track : MonoBehaviour
 
 	protected void Update()
 	{
-		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(key))
+		RaycastHit hitInfo;
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		var layerMask = 1 << 8;
+		bool isMouseOnTrack = false;
+		if (Input.GetMouseButton(0) && Physics.Raycast(ray, out hitInfo, 100.0f, layerMask))
+		{
+			isMouseOnTrack = hitInfo.transform == transform;
+		}
+
+		if ((Input.GetMouseButtonDown(0) && isMouseOnTrack) || Input.GetKeyDown(key))
 		{
 			foreach (var detector in detectors)
 			{
@@ -44,22 +53,45 @@ public class Track : MonoBehaviour
 					}
 					detector.Remove(detector.BarInside[0]);
 				}
+
+				if (detector.LongPressInside.Count > 0 && detector.LongPressInside[0].triggered == false)
+				{
+					var longPress = detector.LongPressInside[0];
+					longPress.triggered = true;
+
+					var percentage = 1 - ((longPress.transform.position.z + longPress.Length / 2f) / longPress.Length);
+					longPress.pressedPosition = Mathf.Max(0f, percentage);
+					Debug.Log("Triggered at " + longPress.pressedPosition * 100 + "% on " + longPress.transform.position);
+				}
 			}
 		}
 
-		if (Input.GetMouseButton(0))
+		foreach (var detector in detectors)
 		{
-			RaycastHit hitInfo;
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			var layerMask = 1 << 8;
-			if (Physics.Raycast(ray, out hitInfo, 100.0f, layerMask))
+			if (detector.LongPressInside.Count > 0)
 			{
-				if (hitInfo.transform == this.transform)
+				var longPress = detector.LongPressInside[0];
+				if (detector.LongPressInside[0].triggered && detector.LongPressInside[0].pressing == true)
 				{
-					GetComponent<Renderer>().material = selected;
-					return;
+					if ((Input.GetMouseButton(0) && isMouseOnTrack) || Input.GetKey(key))
+					{
+						//Debug.Log("Pressing");
+					}
+					else
+					{
+						detector.LongPressInside[0].pressing = false;
+						var percentage = 1 - ((longPress.transform.position.z + longPress.Length / 2f) / longPress.Length);
+						longPress.releasedPosition = Mathf.Min(1f, percentage);
+						Debug.Log("Unpressed on " + longPress.releasedPosition * 100 + "% on " + longPress.transform.position);
+					}
 				}
 			}
+		}
+
+		if (Input.GetMouseButton(0) && isMouseOnTrack)
+		{
+			GetComponent<Renderer>().material = selected;
+			return;
 		}
 
 		// Debug
@@ -69,10 +101,5 @@ public class Track : MonoBehaviour
 			return;
 		}
 		GetComponent<Renderer>().material = original;
-	}
-
-	protected void FixedUpdate()
-	{
-
 	}
 }

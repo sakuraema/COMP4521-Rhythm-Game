@@ -10,15 +10,12 @@ public class Track : MonoBehaviour
 	public Material selected;
 	public BarDetector[] detectors;
 	public KeyCode key;
-	public AudioClip clip;
 
 	private float m_PerfectDistance;
 	private float m_EffectiveDistance;
-	private AudioSource m_AudioSource;
 
 	protected void Awake()
 	{
-		m_AudioSource = GetComponent<AudioSource>();
 		m_EffectiveDistance = TestScroller.instance.Speed / EFFECTIVE_DISTANCE_FACTOR / 2f;
 		m_PerfectDistance = m_EffectiveDistance / 2f;
 		foreach (var item in detectors)
@@ -40,12 +37,10 @@ public class Track : MonoBehaviour
 					if (distance < m_PerfectDistance)
 					{
 						Debug.Log("Perfect");
-						m_AudioSource.PlayOneShot(clip);
 					}
 					else
 					{
 						Debug.Log("Good");
-						m_AudioSource.PlayOneShot(clip);
 					}
 					detector.Remove(detector.BarInside[0]);
 				}

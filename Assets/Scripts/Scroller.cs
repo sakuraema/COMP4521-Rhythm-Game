@@ -80,7 +80,7 @@ public class Scroller : Singleton<Scroller>
 
 			if (bar.transform.position.z < -m_TrackLength)
 			{
-				ReturnBarToPool(bar);
+				Destroy(bar);
 			}
 		}
 	}

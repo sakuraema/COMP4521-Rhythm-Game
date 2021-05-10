@@ -11,7 +11,7 @@ public class BarDetector : MonoBehaviour
 	public void Remove(Bar bar)
 	{
 		m_BarInside.Remove(bar);
-		Destroy(bar.gameObject);
+		bar.gameObject.SetActive(false);
 		//Scroller.instance.ReturnBarToPool(bar);
 	}
 
@@ -29,7 +29,6 @@ public class BarDetector : MonoBehaviour
 		if (bar == null) return;
 
 		Remove(bar);
-
-		Debug.Log("Missed");
+		//Debug.Log("Missed");
 	}
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Utilities;
@@ -6,12 +6,13 @@ using Core.Utilities;
 public class MusicPlayer : MonoBehaviour
 {
     public AudioSource musicSource;
+	public float delay;
     private Timer m_SpawnDelayTimer;
     //private float m_Time;
 
     void Awake()
     {
-        m_SpawnDelayTimer = new Timer(5f, PlayMusic);
+        m_SpawnDelayTimer = new Timer(delay, PlayMusic);
         //m_Time = -5f;
     }
 

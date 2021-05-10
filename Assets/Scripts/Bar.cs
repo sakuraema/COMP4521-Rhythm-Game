@@ -10,24 +10,25 @@ public class Bar : MonoBehaviour
 	private AudioSource audioSource;
 	private bool played;
 
-    private void Start()
+    protected virtual void Start()
 	{
 		audioSource = GetComponent<AudioSource>();
     }
 
 
-	public void Reset()
+	public virtual void Reset()
 	{
 		played = false;
 	}
 
 	// Update is called once per frame
-	void FixedUpdate()
+	protected virtual void FixedUpdate()
     {
-        if (transform.position.z <= 0 && !played)
+        if (transform.position.z <= -15 && !played)
 		{
-			//audioSource.PlayOneShot(clap);
-			//played = true;
+			played = true;
+			Destroy(gameObject);
+			//Debug.Log("Arrived at " + Time.time);
 		}
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
+	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 8f;
+
 	public Material original;
 	public Material selected;
 	public BarDetector[] detectors;
@@ -17,11 +19,12 @@ public class Track : MonoBehaviour
 	protected void Awake()
 	{
 		m_AudioSource = GetComponent<AudioSource>();
-		m_EffectiveDistance = Scroller.instance.speed / 10f / 2f;
+		m_EffectiveDistance = TestScroller.instance.Speed / EFFECTIVE_DISTANCE_FACTOR / 2f;
 		m_PerfectDistance = m_EffectiveDistance / 2f;
 		foreach (var item in detectors)
 		{
-			item.GetComponent<BoxCollider>().size = new Vector3(2f, 1f, Scroller.instance.speed / 10f);
+			var originalSize = item.GetComponent<BoxCollider>().size;
+			item.GetComponent<BoxCollider>().size = new Vector3(originalSize.x, originalSize.y, m_EffectiveDistance * 2f);
 		}
 	}
 

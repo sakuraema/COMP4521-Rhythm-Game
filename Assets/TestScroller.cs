@@ -8,8 +8,8 @@ public class TestScroller : Singleton<TestScroller>
 	static readonly private float BEAT_INTERVAL = 4f;
 
 	public float bgm = 128;
-	[Range(0, 10)]
 	public float speedMultiplier = 1;
+	public GameObject beatLine;
 
 	private Vector3 m_Velocity;
 	private float m_Speed;
@@ -38,6 +38,11 @@ public class TestScroller : Singleton<TestScroller>
 
 	private void OnDrawGizmos()
 	{
-		
+		for (int i = 0; i < 1000; i++)
+		{
+			var from = new Vector3(-4, 0, 4f * i);
+			var to = new Vector3(4, 0, 4f * i);
+			Gizmos.DrawLine(from, to);
+		}
 	}
 }

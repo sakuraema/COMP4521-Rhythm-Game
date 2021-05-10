@@ -9,7 +9,6 @@ public class TestScroller : Singleton<TestScroller>
 
 	public float bgm = 128;
 	public float speedMultiplier = 1;
-	public GameObject beatLine;
 
 	private Vector3 m_Velocity;
 	private float m_Speed;

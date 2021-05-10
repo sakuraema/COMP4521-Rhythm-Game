@@ -455,7 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BPM: 128
   speed: 150
-  spawnDelay: 5
+  spawnDelay: 4.9
   spawnPoint:
   - {x: -3.75, y: 0, z: 90}
   - {x: -1.25, y: 0, z: 90}

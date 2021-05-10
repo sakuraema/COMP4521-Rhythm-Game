@@ -11,7 +11,8 @@ public class BarDetector : MonoBehaviour
 	public void Remove(Bar bar)
 	{
 		m_BarInside.Remove(bar);
-		Scroller.instance.ReturnBarToPool(bar);
+		Destroy(bar.gameObject);
+		//Scroller.instance.ReturnBarToPool(bar);
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -28,6 +29,7 @@ public class BarDetector : MonoBehaviour
 		if (bar == null) return;
 
 		Remove(bar);
+
 		Debug.Log("Missed");
 	}
 }

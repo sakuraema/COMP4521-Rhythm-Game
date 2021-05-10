@@ -38,8 +38,20 @@ public class TestScroller : Singleton<TestScroller>
 
 	private void OnDrawGizmos()
 	{
+		Gizmos.color = Color.blue;
+		Gizmos.DrawLine(new Vector3(-2, 0, 0), new Vector3(-2, 0, 2000));
+		Gizmos.DrawLine(new Vector3(0, 0, 0), new Vector3(0, 0, 2000));
+		Gizmos.DrawLine(new Vector3(2, 0, 0), new Vector3(2, 0, 2000));
 		for (int i = 0; i < 1000; i++)
 		{
+			if (i % 4 == 0)
+			{
+				Gizmos.color = Color.red;
+			}
+			else
+			{
+				Gizmos.color = Color.white;
+			}
 			var from = new Vector3(-4, 0, 4f * i);
 			var to = new Vector3(4, 0, 4f * i);
 			Gizmos.DrawLine(from, to);

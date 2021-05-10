@@ -5,16 +5,7 @@ using UnityEngine;
 
 public class Bar : MonoBehaviour
 {
-	public AudioClip clap;
-
-	private AudioSource audioSource;
 	private bool played;
-
-    protected virtual void Start()
-	{
-		audioSource = GetComponent<AudioSource>();
-    }
-
 
 	public virtual void Reset()
 	{

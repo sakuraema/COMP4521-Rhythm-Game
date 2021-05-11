@@ -7,8 +7,8 @@ public class Scroller : Singleton<Scroller>
 {
 	static readonly private float BEAT_INTERVAL = 4f;
 
-	public float bgm = 128;
-	public float speedMultiplier = 1;
+	public float BPM;
+	public float speedMultiplier;
 
 	private Vector3 m_Velocity;
 	private float m_Speed;
@@ -18,7 +18,7 @@ public class Scroller : Singleton<Scroller>
 	protected override void Awake()
 	{
 		base.Awake();
-		m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / bgm);
+		m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / BPM);
 		m_Velocity = new Vector3(0f, 0f, -m_Speed);
 
 		// Scaling according to speed

@@ -53,6 +53,7 @@ public class Detector : MonoBehaviour
 				Debug.Log("Hold until " + longPress.releasedPosition * 100 + "%");
 			}
 		}
+		GameManager.instance.missedCount++;
 		Remove(bar);
 	}
 }

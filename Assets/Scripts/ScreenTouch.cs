@@ -13,32 +13,32 @@ public class ScreenTouch : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		//foreach (Touch touch in Input.touches)
-		//{
-		//	if (touch.phase == TouchPhase.Began)
-		//	{
-		//		// Construct a ray from the current touch coordinates
-		//		Ray ray = Camera.main.ScreenPointToRay(touch.position);
-		//		if (Physics.Raycast(ray))
-		//		{
-		//			// Create a particle if hit
-		//			Instantiate(touchEffect, transform.position, transform.rotation);
-		//		}
-		//	}
-		//}
-
+#if UNITY_EDITOR
 		if (Input.GetMouseButtonDown(0))
 		{
 			m_touchPosition = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
 			m_touchPosition.z = 0;
-			//touchEffect.transform.position = m_touchPosition;
-			//touchEffect.Play();
 
 			var poolable = PoolManager.instance.GetPoolable(touchEffect.GetComponent<Poolable>());
 			poolable.transform.position = m_touchPosition;
 			poolable.gameObject.SetActive(true);
 			poolable.GetComponent<ParticleSystem>().Play();
 			m_ActiveTouchEffects.Add(poolable);
+		}
+#elif UNITY_IOS || UNITY_ANDROID
+		foreach (Touch touch in Input.touches)
+		{
+			if (touch.phase == TouchPhase.Began)
+			{
+				m_touchPosition = GetComponent<Camera>().ScreenToWorldPoint(touch.position);
+				m_touchPosition.z = 0;
+
+				var poolable = PoolManager.instance.GetPoolable(touchEffect.GetComponent<Poolable>());
+				poolable.transform.position = m_touchPosition;
+				poolable.gameObject.SetActive(true);
+				poolable.GetComponent<ParticleSystem>().Play();
+				m_ActiveTouchEffects.Add(poolable);
+			}
 		}
 
 		for (int i = m_ActiveTouchEffects.Count - 1; i >= 0; i--)
@@ -50,5 +50,6 @@ public class ScreenTouch : MonoBehaviour
 				PoolManager.instance.ReturnPoolable(item);
 			}
 		}
+#endif
 	}
 }

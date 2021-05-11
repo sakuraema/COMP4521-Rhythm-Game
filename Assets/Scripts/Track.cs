@@ -8,100 +8,119 @@ public class Track : MonoBehaviour
 
 	public Material original;
 	public Material selected;
-	public Detector[] detectors;
+	public Detector detector;
 	public KeyCode key;
+	public LayerMask trackLayer;
 
 	private float m_PerfectDistance;
 	private float m_EffectiveDistance;
 
+	public bool IsMouseOnTrack
+	{
+		get
+		{
+			RaycastHit hitInfo;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+			return Physics.Raycast(ray, out hitInfo, 100.0f, trackLayer) && hitInfo.transform == transform;
+		}
+	}
+
+	bool IsTouchOnTrack(Touch touch)
+	{
+		RaycastHit hitInfo;
+		Ray ray = Camera.main.ScreenPointToRay(touch.position);
+
+		return Physics.Raycast(ray, out hitInfo, 100.0f, trackLayer) && hitInfo.transform == transform;
+	}
+
+	void HitNote()
+	{
+		if (detector.Notes.Count <= 0) return;
+
+		var note = detector.Notes[0];
+		if (note is SingleNote)
+		{
+			var singleNote = note as SingleNote;
+			float distance = Mathf.Abs(note.transform.position.z);
+
+			singleNote.Hit(distance < m_PerfectDistance);
+			detector.Remove(note);
+		}
+		else
+		{
+			var longNote = note as LongNote;
+			if (!longNote.Triggered)
+			{
+				longNote.Triggered = true;
+			}
+		}
+	}
+
+	void ReleaseNote()
+	{
+		if (detector.Notes.Count <= 0) return;
+
+		// Only LongNote can be released
+		var longNote = detector.Notes[0] as LongNote;
+
+		if (longNote)
+		{
+			longNote.Pressing = false;
+		}
+	}
+
 	protected void Awake()
 	{
-		m_EffectiveDistance = TestScroller.instance.Speed / EFFECTIVE_DISTANCE_FACTOR / 2f;
+		m_EffectiveDistance = Scroller.instance.Speed / EFFECTIVE_DISTANCE_FACTOR / 2f;
 		m_PerfectDistance = m_EffectiveDistance / 2f;
-		foreach (var item in detectors)
-		{
-			var originalSize = item.GetComponent<BoxCollider>().size;
-			item.GetComponent<BoxCollider>().size = new Vector3(originalSize.x, originalSize.y, m_EffectiveDistance * 2f);
-		}
+
+		var detectorHitBox = detector.GetComponent<BoxCollider>();
+		detectorHitBox.size = new Vector3(detectorHitBox.size.x, detectorHitBox.size.y, m_EffectiveDistance * 2f);
 	}
 
 	protected void Update()
 	{
-		RaycastHit hitInfo;
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		var layerMask = 1 << 8;
-		bool isMouseOnTrack = false;
-		if (Input.GetMouseButton(0) && Physics.Raycast(ray, out hitInfo, 100.0f, layerMask))
+		// Keyboard and mouse input
+#if UNITY_EDITOR
+		if ((Input.GetMouseButtonDown(0) && IsMouseOnTrack) || Input.GetKeyDown(key))
 		{
-			isMouseOnTrack = hitInfo.transform == transform;
+			HitNote();
 		}
 
-		if ((Input.GetMouseButtonDown(0) && isMouseOnTrack) || Input.GetKeyDown(key))
+		if ((Input.GetMouseButton(0) && IsMouseOnTrack) || Input.GetKey(key))
 		{
-			foreach (var detector in detectors)
+			GetComponent<Renderer>().material = selected;
+		}
+		else
+		{
+			GetComponent<Renderer>().material = original;
+			ReleaseNote();
+		}
+#elif UNITY_IOS || UNITY_ANDROID
+		// Touch input
+		bool isAnyTouchOnTrack = false;
+		for (int i = 0; i < Input.touchCount; ++i)
+		{
+			if (!IsTouchOnTrack(Input.GetTouch(i))) continue;
+			isAnyTouchOnTrack = true;
+			// Pressed on this frame
+			if (Input.GetTouch(i).phase == TouchPhase.Began)
 			{
-				if (detector.BarInside.Count > 0)
-				{
-					float distance = Mathf.Abs(detector.BarInside[0].transform.position.z);
-					if (distance < m_PerfectDistance)
-					{
-						Debug.Log("Perfect");
-						GameManager.instance.perfectCount++;
-					}
-					else
-					{
-						Debug.Log("Good");
-						GameManager.instance.goodCount++;
-					}
-					detector.Remove(detector.BarInside[0]);
-				}
-
-				if (detector.LongPressInside.Count > 0 && detector.LongPressInside[0].triggered == false)
-				{
-					var longPress = detector.LongPressInside[0];
-					longPress.triggered = true;
-
-					var percentage = 1 - ((longPress.transform.position.z + longPress.Length / 2f) / longPress.Length);
-					longPress.pressedPosition = Mathf.Max(0f, percentage);
-					Debug.Log("Triggered at " + longPress.pressedPosition * 100 + "% on " + longPress.transform.position);
-				}
+				HitNote();
+				break;
 			}
 		}
 
-		foreach (var detector in detectors)
-		{
-			if (detector.LongPressInside.Count > 0)
-			{
-				var longPress = detector.LongPressInside[0];
-				if (detector.LongPressInside[0].triggered && detector.LongPressInside[0].pressing == true)
-				{
-					if ((Input.GetMouseButton(0) && isMouseOnTrack) || Input.GetKey(key))
-					{
-						//Debug.Log("Pressing");
-					}
-					else
-					{
-						detector.LongPressInside[0].pressing = false;
-						var percentage = 1 - ((longPress.transform.position.z + longPress.Length / 2f) / longPress.Length);
-						longPress.releasedPosition = Mathf.Min(1f, percentage);
-						Debug.Log("Unpressed on " + longPress.releasedPosition * 100 + "% on " + longPress.transform.position);
-					}
-				}
-			}
-		}
-
-		if (Input.GetMouseButton(0) && isMouseOnTrack)
+		if (isAnyTouchOnTrack)
 		{
 			GetComponent<Renderer>().material = selected;
-			return;
 		}
-
-		// Debug
-		if (Input.GetKey(key))
+		else
 		{
-			GetComponent<Renderer>().material = selected;
-			return;
+			GetComponent<Renderer>().material = original;
+			ReleaseNote();
 		}
-		GetComponent<Renderer>().material = original;
+#endif
 	}
 }

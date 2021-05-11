@@ -26,6 +26,14 @@ public class Track : MonoBehaviour
 		}
 	}
 
+	bool IsTouchOnTrack(Touch touch)
+	{
+		RaycastHit hitInfo;
+		Ray ray = Camera.main.ScreenPointToRay(touch.position);
+
+		return Physics.Raycast(ray, out hitInfo, 100.0f, trackLayer) && hitInfo.transform == transform;
+	}
+
 	void HitNote()
 	{
 		if (detector.Notes.Count <= 0) return;
@@ -73,6 +81,8 @@ public class Track : MonoBehaviour
 
 	protected void Update()
 	{
+		// Keyboard and mouse input
+#if UNITY_EDITOR
 		if ((Input.GetMouseButtonDown(0) && IsMouseOnTrack) || Input.GetKeyDown(key))
 		{
 			HitNote();
@@ -87,5 +97,30 @@ public class Track : MonoBehaviour
 			GetComponent<Renderer>().material = original;
 			ReleaseNote();
 		}
+#elif UNITY_IOS || UNITY_ANDROID
+		// Touch input
+		bool isAnyTouchOnTrack = false;
+		for (int i = 0; i < Input.touchCount; ++i)
+		{
+			if (!IsTouchOnTrack(Input.GetTouch(i))) continue;
+			isAnyTouchOnTrack = true;
+			// Pressed on this frame
+			if (Input.GetTouch(i).phase == TouchPhase.Began)
+			{
+				HitNote();
+				break;
+			}
+		}
+
+		if (isAnyTouchOnTrack)
+		{
+			GetComponent<Renderer>().material = selected;
+		}
+		else
+		{
+			GetComponent<Renderer>().material = original;
+			ReleaseNote();
+		}
+#endif
 	}
 }

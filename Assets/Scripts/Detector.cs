@@ -44,12 +44,8 @@ public class Detector : MonoBehaviour
 		{
 			var longPress = note as LongNote;
 			longPress.Pressing = false;
-			if (!longPress.Triggered) GameManager.instance.missedCount++;
 		}
-		else
-		{
-			GameManager.instance.missedCount++;
-		}
+
 		Remove(note);
 	}
 }

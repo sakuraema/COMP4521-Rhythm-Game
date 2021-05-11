@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 2f;
+	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 8f;
 
 	public Material original;
 	public Material selected;
@@ -46,10 +46,12 @@ public class Track : MonoBehaviour
 					if (distance < m_PerfectDistance)
 					{
 						Debug.Log("Perfect");
+						GameManager.instance.perfectCount++;
 					}
 					else
 					{
 						Debug.Log("Good");
+						GameManager.instance.goodCount++;
 					}
 					detector.Remove(detector.BarInside[0]);
 				}

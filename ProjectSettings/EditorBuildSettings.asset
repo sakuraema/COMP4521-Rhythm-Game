@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tera.unity
     guid: 772f75813a5db9b4488159369234791b
+  - enabled: 1
+    path: Assets/Scenes/Iron Princess.unity
+    guid: a3746e2778e218d408cf89dd1a4e0def
   m_configObjects: {}

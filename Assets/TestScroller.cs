@@ -7,7 +7,7 @@ public class TestScroller : Singleton<TestScroller>
 {
 	static readonly private float BEAT_INTERVAL = 4f;
 
-	public float bgm = 128;
+	public float BPM = 128;
 	public float speedMultiplier = 1;
 
 	private Vector3 m_Velocity;
@@ -18,7 +18,7 @@ public class TestScroller : Singleton<TestScroller>
 	protected override void Awake()
 	{
 		base.Awake();
-		m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / bgm);
+		m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / BPM);
 		m_Velocity = new Vector3(0f, 0f, -m_Speed);
 
 		// Scaling according to speed

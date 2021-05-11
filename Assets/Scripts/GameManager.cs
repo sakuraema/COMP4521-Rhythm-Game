@@ -8,6 +8,4 @@ public class GameManager : Singleton<GameManager>
 	public int perfectCount;
 	public int goodCount;
 	public int missedCount;
-
-    static public float s_SpeedOffset = 1.0f;
 }

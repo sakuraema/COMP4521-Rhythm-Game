@@ -26,7 +26,14 @@ public class TestScroller : Singleton<TestScroller>
 		transform.localScale = new Vector3(1, 1, scaleZ);
 		foreach (Transform child in transform)
 		{
-			child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ);
+			if (child.GetComponent<LongPress>() != null)
+			{
+				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ * speedMultiplier);
+			}
+			else
+			{
+				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ);
+			}
 		}
 	}
 

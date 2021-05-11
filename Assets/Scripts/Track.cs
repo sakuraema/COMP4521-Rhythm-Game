@@ -46,10 +46,12 @@ public class Track : MonoBehaviour
 					if (distance < m_PerfectDistance)
 					{
 						Debug.Log("Perfect");
+						GameManager.instance.perfectCount++;
 					}
 					else
 					{
 						Debug.Log("Good");
+						GameManager.instance.goodCount++;
 					}
 					detector.Remove(detector.BarInside[0]);
 				}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 2f;
+	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 8f;
 
 	public Material original;
 	public Material selected;

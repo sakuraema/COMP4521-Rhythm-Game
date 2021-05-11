@@ -1,103 +1,66 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Utilities;
 
 public class Scroller : Singleton<Scroller>
 {
-	public float BPM;
-	public int speed;
-	public float spawnDelay;
-	public Vector3[] spawnPoint;
-	public Poolable barPoolable;
-	public Transform startingLine;
-	public Transform endingLine;
+	static readonly private float BEAT_INTERVAL = 4f;
 
-	private RepeatingTimer m_SpawnBarTimer;
-	private Timer m_SpawnDelayTimer;
-	private List<Bar> m_ActiveBars = new List<Bar>();
+	public float bgm = 128;
+	public float speedMultiplier = 1;
+
 	private Vector3 m_Velocity;
-	private float m_TrackLength;
-	private float m_Delay;
-	private List<Beat> m_Beatmap;
-	private int m_BeatCount = 0;
+	private float m_Speed;
 
-	public void ReturnBarToPool(Bar bar)
-	{
-		bar.Reset();
-		PoolManager.instance.ReturnPoolable(bar.GetComponent<Poolable>());
-		m_ActiveBars.Remove(bar);
-	}
-
-	protected void SpawnBar()
-	{
-		if (m_BeatCount >= m_Beatmap.Count)
-		{
-			m_SpawnBarTimer = null;
-			return;
-		}
-		for (int i = 0; i < 4; i++)
-		{
-			if (m_Beatmap[m_BeatCount].tracks[i])
-			{
-				var bar = PoolManager.instance.GetPoolable(barPoolable).GetComponent<Bar>();
-				bar.gameObject.SetActive(true);
-				bar.transform.position = spawnPoint[i];
-				m_ActiveBars.Add(bar);
-			}
-		}
-		m_SpawnBarTimer.SetTime(m_Beatmap[m_BeatCount].delay);
-		m_BeatCount++;
-	}
-	
-	protected void StartSpawning()
-	{
-		m_SpawnDelayTimer = null;
-		m_SpawnBarTimer = new RepeatingTimer(1f / (BPM / 60.0f), SpawnBar);
-	}
+	public float Speed { get => m_Speed; set => m_Speed = value; }
 
 	protected override void Awake()
-    {
-		base.Awake();
-		m_TrackLength = startingLine.position.z - endingLine.position.z;
-		m_Velocity = new Vector3(0, 0, -speed);
-		for (int i = 0; i < spawnPoint.Length; i++)
-		{
-			spawnPoint[i].z = m_TrackLength;
-		}
-		m_Delay = spawnDelay - m_TrackLength / speed;
-		m_SpawnDelayTimer = new Timer(m_Delay, StartSpawning);
-		m_Beatmap = Beatmap.instance.beats;
-	}
-
-	protected virtual void FixedUpdate()
 	{
-		m_SpawnDelayTimer?.Tick(Time.fixedDeltaTime);
-		m_SpawnBarTimer?.Tick(Time.fixedDeltaTime);
-		for (int i = m_ActiveBars.Count - 1; i >= 0; i--)
-		{
-			var bar = m_ActiveBars[i];
-			bar.transform.position += m_Velocity * Time.fixedDeltaTime;
+		base.Awake();
+		m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / bgm);
+		m_Velocity = new Vector3(0f, 0f, -m_Speed);
 
-			if (bar.transform.position.z < -m_TrackLength)
+		// Scaling according to speed
+		float scaleZ = speedMultiplier;
+		transform.localScale = new Vector3(1, 1, scaleZ);
+		foreach (Transform child in transform)
+		{
+			if (child.GetComponent<LongNote>() != null)
 			{
-				Destroy(bar);
+				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ * speedMultiplier);
+			}
+			else
+			{
+				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ);
 			}
 		}
 	}
 
-	//protected virtual void Update()
-	//{
-	//	m_SpawnDelayTimer?.Tick(Time.deltaTime);
-	//	m_SpawnBarTimer?.Tick(Time.deltaTime);
-	//	for (int i = m_ActiveBars.Count - 1; i >= 0; i--)
-	//	{
-	//		var bar = m_ActiveBars[i];
-	//		bar.transform.position += m_Velocity * Time.deltaTime;
+	private void Update()
+	{
+		transform.position += m_Velocity * Time.deltaTime;
+	}
 
-	//		if (bar.transform.position.z < -m_TrackLength)
-	//		{
-	//			ReturnBarToPool(bar);
-	//		}
-	//	}
-	//}
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.blue;
+		Gizmos.DrawLine(new Vector3(-2, 0, 0), new Vector3(-2, 0, 2000));
+		Gizmos.DrawLine(new Vector3(0, 0, 0), new Vector3(0, 0, 2000));
+		Gizmos.DrawLine(new Vector3(2, 0, 0), new Vector3(2, 0, 2000));
+		for (int i = 0; i < 1000; i++)
+		{
+			if (i % 4 == 0)
+			{
+				Gizmos.color = Color.red;
+			}
+			else
+			{
+				Gizmos.color = Color.white;
+			}
+			var from = new Vector3(-4, 0, 4f * i);
+			var to = new Vector3(4, 0, 4f * i);
+			Gizmos.DrawLine(from, to);
+		}
+	}
 }

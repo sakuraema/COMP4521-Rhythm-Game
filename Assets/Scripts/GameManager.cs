@@ -9,5 +9,9 @@ public class GameManager : Singleton<GameManager>
 	public int goodCount;
 	public int missedCount;
 
-    static public float s_SpeedOffset = 1.0f;
+	protected override void Awake()
+	{
+		base.Awake();
+		Application.targetFrameRate = 300;
+	}
 }

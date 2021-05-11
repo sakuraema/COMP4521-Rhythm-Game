@@ -4,56 +4,48 @@ using UnityEngine;
 
 public class Detector : MonoBehaviour
 {
-	private List<Bar> m_BarInside = new List<Bar>();
-	private List<LongPress> m_LongPressInside = new List<LongPress>();
+	private List<Note> m_Notes = new List<Note>();
 
-	public List<Bar> BarInside { get => m_BarInside; set => m_BarInside = value; }
-	public List<LongPress> LongPressInside { get => m_LongPressInside; set => m_LongPressInside = value; }
+	public List<Note> Notes { get => m_Notes; set => m_Notes = value; }
 
-	public void Remove(Bar bar)
+	public void Remove(Note note)
 	{
-		if (bar is LongPress)
+		m_Notes.Remove(note);
+		if (note.Score == Note.ScoringValue.Perfect)
 		{
-			m_LongPressInside.Remove(bar as LongPress);
-			bar.gameObject.SetActive(false);
+			GameManager.instance.perfectCount++;
+		}
+		else if (note.Score == Note.ScoringValue.Good)
+		{
+			GameManager.instance.goodCount++;
 		}
 		else
 		{
-			m_BarInside.Remove(bar);
-			bar.gameObject.SetActive(false);
+			GameManager.instance.missedCount++;
 		}
+		note.gameObject.SetActive(false);
+		Destroy(note.gameObject);
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		var bar = other.GetComponent<Bar>();
-		if (bar == null) return;
+		var note = other.GetComponent<Note>();
+		if (note == null) return;
 
-		if (bar is LongPress)
-		{
-			m_LongPressInside.Add(bar as LongPress);
-		}
-		else
-		{
-			m_BarInside.Add(bar);
-		}
+		m_Notes.Add(note);
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		var bar = other.GetComponent<Bar>();
-		if (bar == null) return;
-		//Debug.Log("Missed");
-		if (bar is LongPress)
+		var note = other.GetComponent<Note>();
+		if (note == null) return;
+
+		if (note is LongNote)
 		{
-			var longPress = bar as LongPress;
-			if (longPress.triggered && longPress.pressing)
-			{
-				longPress.releasedPosition = 1f;
-				Debug.Log("Hold until " + longPress.releasedPosition * 100 + "%");
-			}
+			var longPress = note as LongNote;
+			longPress.Pressing = false;
 		}
-		GameManager.instance.missedCount++;
-		Remove(bar);
+
+		Remove(note);
 	}
 }

@@ -8,7 +8,6 @@ public class Scroller : Singleton<Scroller>
 	static readonly private float BEAT_INTERVAL = 4f;
 
 	public float BPM;
-	public float speedMultiplier;
 
 	private Vector3 m_Velocity;
 	private float m_Speed;
@@ -27,11 +26,7 @@ public class Scroller : Singleton<Scroller>
 		transform.localScale = new Vector3(1, 1, scaleZ);
 		foreach (Transform child in transform)
 		{
-			if (child.GetComponent<LongNote>() != null)
-			{
-				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ * scaleZ);
-			}
-			else
+			if (child.GetComponent<SingleNote>() != null)
 			{
 				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ);
 			}

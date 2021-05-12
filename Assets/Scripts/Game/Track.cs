@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 8f;
+	static private readonly float EFFECTIVE_DISTANCE_FACTOR = 4f;
 
 	public Material original;
 	public Material selected;
 	public Detector detector;
 	public KeyCode key;
 	public LayerMask trackLayer;
+	public bool dynamicDetectorSize = true;
 
 	private float m_PerfectDistance;
 	private float m_EffectiveDistance;
@@ -75,8 +76,11 @@ public class Track : MonoBehaviour
 		m_EffectiveDistance = Scroller.instance.Speed / EFFECTIVE_DISTANCE_FACTOR / 2f;
 		m_PerfectDistance = m_EffectiveDistance / 2f;
 
-		var detectorHitBox = detector.GetComponent<BoxCollider>();
-		detectorHitBox.size = new Vector3(detectorHitBox.size.x, detectorHitBox.size.y, m_EffectiveDistance * 2f);
+		if (dynamicDetectorSize)
+		{
+			var detectorHitBox = detector.GetComponent<BoxCollider>();
+			detectorHitBox.size = new Vector3(detectorHitBox.size.x, detectorHitBox.size.y, m_EffectiveDistance * 2f);
+		}
 	}
 
 	protected void Update()

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Core.Utilities;
 using UnityEngine;
 using UnityEngine.Audio;

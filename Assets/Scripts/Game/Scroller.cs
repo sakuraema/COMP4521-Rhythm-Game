@@ -18,17 +18,18 @@ public class Scroller : Singleton<Scroller>
 	protected override void Awake()
 	{
 		base.Awake();
-		m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / BPM);
+		//m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / BPM);
+		m_Speed = BEAT_INTERVAL * GameManager.instance.ScrollSpeed;
 		m_Velocity = new Vector3(0f, 0f, -m_Speed);
 
 		// Scaling according to speed
-		float scaleZ = speedMultiplier;
+		float scaleZ = GameManager.instance.ScrollSpeed * (60 / BPM);
 		transform.localScale = new Vector3(1, 1, scaleZ);
 		foreach (Transform child in transform)
 		{
 			if (child.GetComponent<LongNote>() != null)
 			{
-				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ * speedMultiplier);
+				child.localScale = new Vector3(child.localScale.x, child.localScale.y, child.localScale.z / scaleZ * scaleZ);
 			}
 			else
 			{

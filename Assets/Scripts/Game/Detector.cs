@@ -10,21 +10,27 @@ public class Detector : MonoBehaviour
 
 	public void Remove(Note note)
 	{
-		m_Notes.Remove(note);
-		if (note.Score == Note.ScoringValue.Perfect)
+		if (m_Notes.Remove(note))
 		{
-			GameManager.instance.perfectCount++;
-		}
-		else if (note.Score == Note.ScoringValue.Good)
-		{
-			GameManager.instance.goodCount++;
+			if (note.Score == Note.ScoringValue.Perfect)
+			{
+				ScoreManager.instance.perfectCount++;
+			}
+			else if (note.Score == Note.ScoringValue.Good)
+			{
+				ScoreManager.instance.goodCount++;
+			}
+			else
+			{
+				ScoreManager.instance.missedCount++;
+			}
+			note.gameObject.SetActive(false);
+			Destroy(note.gameObject);
 		}
 		else
 		{
-			GameManager.instance.missedCount++;
+			Debug.Log("Try to remove from already remove");
 		}
-		note.gameObject.SetActive(false);
-		Destroy(note.gameObject);
 	}
 
 	private void OnTriggerEnter(Collider other)

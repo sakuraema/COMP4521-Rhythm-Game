@@ -23,12 +23,4 @@ public abstract class Note : MonoBehaviour
 	{
 		m_Length = transform.lossyScale.z;
 	}
-
-	protected virtual void FixedUpdate()
-	{
-		if (transform.position.z <= -m_Length - 10f)
-		{
-			Destroy(gameObject);
-		}
-	}
 }

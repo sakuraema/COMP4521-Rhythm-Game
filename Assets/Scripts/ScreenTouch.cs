@@ -17,7 +17,7 @@ public class ScreenTouch : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			m_touchPosition = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
-			m_touchPosition.z = transform.position.z + 1f;
+			m_touchPosition += transform.forward;
 
 			var poolable = PoolManager.instance.GetPoolable(touchEffect.GetComponent<Poolable>());
 			poolable.transform.position = m_touchPosition;
@@ -31,7 +31,7 @@ public class ScreenTouch : MonoBehaviour
 			if (touch.phase == TouchPhase.Began)
 			{
 				m_touchPosition = GetComponent<Camera>().ScreenToWorldPoint(touch.position);
-				m_touchPosition.z = transform.position.z + 1f;
+				m_touchPosition += transform.forward;
 
 				var poolable = PoolManager.instance.GetPoolable(touchEffect.GetComponent<Poolable>());
 				poolable.transform.position = m_touchPosition;

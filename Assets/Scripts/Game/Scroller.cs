@@ -11,6 +11,7 @@ public class Scroller : Singleton<Scroller>
 
 	private Vector3 m_Velocity;
 	private float m_Speed;
+	private bool m_IsMusicEnded;
 
 	public float Speed { get => m_Speed; set => m_Speed = value; }
 
@@ -20,6 +21,8 @@ public class Scroller : Singleton<Scroller>
 		//m_Speed = BEAT_INTERVAL * speedMultiplier / (60 / BPM);
 		m_Speed = BEAT_INTERVAL * GameManager.instance.ScrollSpeed;
 		m_Velocity = new Vector3(0f, 0f, -m_Speed);
+
+		MusicPlayer.instance.onMusicEnd.AddListener(() => m_IsMusicEnded = true);
 
 		// Scaling according to speed
 		float scaleZ = GameManager.instance.ScrollSpeed * (60 / BPM);
@@ -35,6 +38,7 @@ public class Scroller : Singleton<Scroller>
 
 	private void Update()
 	{
+		if (m_IsMusicEnded) return;
 		transform.position += m_Velocity * Time.deltaTime;
 	}
 

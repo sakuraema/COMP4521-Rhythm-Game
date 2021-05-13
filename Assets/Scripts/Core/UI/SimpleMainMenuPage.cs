@@ -12,7 +12,7 @@ namespace Core.UI
 		/// </summary>
 		public Canvas canvas;
 
-		protected void Awake()
+		protected virtual void Awake()
 		{
 			if (canvas == null)
 			{

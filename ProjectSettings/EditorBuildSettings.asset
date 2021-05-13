@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Iron Princess.unity
     guid: a3746e2778e218d408cf89dd1a4e0def
+  - enabled: 1
+    path: Assets/Scenes/Lumina.unity
+    guid: 162cc2095b6f2114c82870a5da673ae6
   m_configObjects: {}

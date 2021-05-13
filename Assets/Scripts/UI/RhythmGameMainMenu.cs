@@ -7,10 +7,16 @@ public class RhythmGameMainMenu : MainMenu
 {
 	public SimpleMainMenuPage optionsMenu;
 	public SimpleMainMenuPage mainMenu;
+	public SimpleMainMenuPage levelSelectMenu;
 
 	public void ShowMainMenu()
 	{
 		ChangePage(mainMenu);
+	}
+
+	public void ShowLevelSelectMenu()
+	{
+		ChangePage(levelSelectMenu);
 	}
 
 	public void ShowOptionsMenu()

@@ -29,7 +29,7 @@ public class Detector : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("Try to remove from already remove");
+			Debug.LogError("Try to remove note that has already been removed");
 		}
 	}
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5388252513496857395}
   - component: {fileID: 5388252513496857396}
   m_Layer: 0
-  m_Name: GameManger
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,4 @@ MonoBehaviour:
   masterVolumeParameter: MasterVolume
   sfxVolumeParameter: SfxVolume
   musicVolumeParameter: MusicVolume
-  perfectCount: 0
-  goodCount: 0
-  missedCount: 0
+  levelList: {fileID: 11400000, guid: 0630e692445b777498e721e8f9f30bfe, type: 2}

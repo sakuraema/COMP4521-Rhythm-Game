@@ -14851,7 +14851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BPM: 120
-  speedMultiplier: 17
 --- !u!1001 &441417341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16615,8 +16614,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961188f9842509b4d9f47b39afa7b6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 506651968}
-  delay: 5.35
+  startDelay: 5.35
+  endDelay: 5
 --- !u!82 &506651968
 AudioSource:
   m_ObjectHideFlags: 0

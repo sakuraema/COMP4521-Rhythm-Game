@@ -16,7 +16,7 @@ public class Track : MonoBehaviour
 	private float m_PerfectDistance;
 	private float m_EffectiveDistance;
 
-	public bool IsMouseOnTrack
+	bool IsMouseOnTrack
 	{
 		get
 		{

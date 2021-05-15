@@ -14,15 +14,15 @@ public class Detector : MonoBehaviour
 		{
 			if (note.Score == Note.ScoringValue.Perfect)
 			{
-				ScoreManager.instance.perfectCount++;
+				ScoreManager.instance.PerfectCount++;
 			}
 			else if (note.Score == Note.ScoringValue.Good)
 			{
-				ScoreManager.instance.goodCount++;
+				ScoreManager.instance.GoodCount++;
 			}
 			else
 			{
-				ScoreManager.instance.missedCount++;
+				ScoreManager.instance.MissedCount++;
 			}
 			note.gameObject.SetActive(false);
 			Destroy(note.gameObject);

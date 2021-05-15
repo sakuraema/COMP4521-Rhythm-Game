@@ -52,23 +52,4 @@ public class PlayFabManager : PersistentSingleton<PlayFabManager>
 		};
 		PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
 	}
-
-	public void GetLeaderboard()
-	{
-		var request = new GetLeaderboardRequest
-		{
-			StatisticName = SceneManager.GetActiveScene().name,
-			StartPosition = 0,
-			MaxResultsCount = 10
-		};
-		PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
-	}
-
-	private void OnLeaderboardGet(GetLeaderboardResult result)
-	{
-		foreach (var item in result.Leaderboard)
-		{
-			Debug.Log(string.Format(("{0} {1} {2}"), item.Position, item.PlayFabId, item.StatValue));
-		}
-	}
 }

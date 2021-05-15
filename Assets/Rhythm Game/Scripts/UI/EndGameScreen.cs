@@ -15,6 +15,7 @@ public class EndGameScreen : MonoBehaviour
 	[Header("Buttons and interactables")]
 	public Button leaderboardButton;
 	public Button backButton;
+	public Leaderboard leaderboard;
 	public LevelLoadingScreen loadingScreen;
 
 	private Canvas m_Canvas;
@@ -53,6 +54,7 @@ public class EndGameScreen : MonoBehaviour
 			m_Canvas.enabled = true;
 			Initialize();
 			PlayFabManager.instance.SendLeaderboard(m_TotalScore);
+			leaderboard.GetLeaderboard();
 		});
 	}
 }

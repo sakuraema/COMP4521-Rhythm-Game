@@ -7,6 +7,4 @@ public class LevelSelectButton : MonoBehaviour
 {
 	public Text levelName;
 	public Text levelDescription;
-	
-	
 }

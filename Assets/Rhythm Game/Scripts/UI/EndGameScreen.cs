@@ -5,21 +5,43 @@ using UnityEngine.UI;
 
 public class EndGameScreen : MonoBehaviour
 {
+	[Header("Score and rank")]
 	public Text perfectCount;
 	public Text goodCount;
 	public Text missedCount;
 	public Text score;
+	public Image rank;
+	public Sprite[] rankSprites;
+	[Header("Buttons and interactables")]
+	public Button leaderboardButton;
+	public Button backButton;
+	public LevelLoadingScreen loadingScreen;
 
 	private Canvas m_Canvas;
+	private int m_TotalScore;
 
-	void Initialize()
+	private void Initialize()
 	{
-		perfectCount.text = ScoreManager.instance.PerfectCount.ToString();
-		goodCount.text = ScoreManager.instance.GoodCount.ToString();
-		missedCount.text = ScoreManager.instance.MissedCount.ToString();
+		var scoreManager = ScoreManager.instance;
+		perfectCount.text = scoreManager.PerfectCount.ToString();
+		goodCount.text = scoreManager.GoodCount.ToString();
+		missedCount.text = scoreManager.MissedCount.ToString();
 
-		long totalScore = ScoreManager.instance.PerfectCount * 300 + ScoreManager.instance.GoodCount * 100;
-		score.text = totalScore.ToString();
+		m_TotalScore = scoreManager.PerfectCount * 300 + scoreManager.GoodCount * 100;
+		score.text = m_TotalScore.ToString();
+
+		var maxScore = (scoreManager.PerfectCount + scoreManager.GoodCount + scoreManager.MissedCount) * 300f;
+		var percentage = m_TotalScore / maxScore;
+		if (percentage > .95f)
+			rank.sprite = rankSprites[0]; // S
+		else if (percentage > .9f)
+			rank.sprite = rankSprites[1]; // A
+		else if (percentage > .8f)
+			rank.sprite = rankSprites[2]; // B
+		else if (percentage > .6f)
+			rank.sprite = rankSprites[3]; // C
+		else
+			rank.sprite = rankSprites[4]; // D
 	}
 
 	protected void Awake()
@@ -30,6 +52,7 @@ public class EndGameScreen : MonoBehaviour
 		{
 			m_Canvas.enabled = true;
 			Initialize();
+			PlayFabManager.instance.SendLeaderboard(m_TotalScore);
 		});
 	}
 }

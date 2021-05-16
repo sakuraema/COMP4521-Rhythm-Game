@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class OptionsMenu : SimpleMainMenuPage
 {
 	public Slider masterSlider;
-
 	public Slider sfxSlider;
-
 	public Slider musicSlider;
 
 	public Slider scrollSpeedSlider;
 	public Text scrollSpeedText;
+
+	public InputField displayNameInput;
 
 	public void UpdateScrollSpeed()
 	{
@@ -57,9 +57,11 @@ public class OptionsMenu : SimpleMainMenuPage
 			{
 				musicSlider.value = music;
 			}
-
+			
 			scrollSpeedSlider.value = GameManager.instance.ScrollSpeed;
 			scrollSpeedText.text = GameManager.instance.ScrollSpeed.ToString();
+
+			displayNameInput.text = GameManager.instance.DisplayName;
 		}
 
 		base.Show();
@@ -77,7 +79,9 @@ public class OptionsMenu : SimpleMainMenuPage
 		{
 			GameManager.instance.SetVolumes(masterVolume, sfxVolume, musicVolume, true);
 			GameManager.instance.ScrollSpeed = scrollSpeedSlider.value;
+			GameManager.instance.DisplayName = displayNameInput.text;
 		}
+		PlayFabManager.instance.UpdateDisplayName(GameManager.instance.DisplayName);
 
 		base.Hide();
 	}

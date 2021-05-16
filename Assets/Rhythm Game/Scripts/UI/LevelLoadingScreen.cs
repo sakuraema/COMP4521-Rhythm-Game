@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Canvas))]
 public class LevelLoadingScreen : MonoBehaviour
 {
 	public Text loadingText;
@@ -11,6 +12,6 @@ public class LevelLoadingScreen : MonoBehaviour
 
 	protected virtual void Awake()
 	{
-		gameObject.SetActive(false);
+		GetComponent<Canvas>().enabled = false;
 	}
 }

@@ -9,6 +9,16 @@ public class GameManager : GameManagerBase<GameManager, GameDataStore>
 {
 	public LevelList levelList;
 
+	public string DisplayName
+	{
+		get => m_DataStore.displayName;
+		set
+		{
+			m_DataStore.displayName = value;
+			SaveData();
+		}
+	}
+
 	public float ScrollSpeed
 	{
 		get => m_DataStore.scrollSpeed;

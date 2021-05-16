@@ -6,7 +6,6 @@ using System.Collections;
 
 public class LevelSelectMenu : SimpleMainMenuPage
 {
-	public LevelLoadingScreen loadingScreen;
 	public VerticalLayoutGroup content;
 	public LevelSelectButton levelSelectButtonPrefab;
 
@@ -21,24 +20,8 @@ public class LevelSelectMenu : SimpleMainMenuPage
 			levelSelectButton.levelName.text = level.name;
 			levelSelectButton.GetComponent<Button>().onClick.AddListener(() =>
 			{
-				StartCoroutine(LoadSceneAsync(level.sceneName));
+				StartCoroutine(LevelManager.instance.LoadSceneAsync(level.sceneName));
 			});
-		}
-	}
-
-	IEnumerator LoadSceneAsync(string sceneName)
-	{
-		AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-		loadingScreen.gameObject.SetActive(true);
-		while (!operation.isDone)
-		{
-			float progress = Mathf.Clamp01(operation.progress / 0.9f);
-
-			loadingScreen.progressBar.value = progress;
-			loadingScreen.percentage.text = (int)(progress * 100f) + "%";
-
-			yield return null;
 		}
 	}
 }

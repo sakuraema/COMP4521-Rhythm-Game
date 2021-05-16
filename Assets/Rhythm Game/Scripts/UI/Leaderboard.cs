@@ -21,18 +21,23 @@ public class Leaderboard : MonoBehaviour
 		{
 			StatisticName = SceneManager.GetActiveScene().name,
 			StartPosition = 0,
-			MaxResultsCount = 8
+			MaxResultsCount = 10
 		};
 		PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
 	}
 
 	private void OnLeaderboardGet(GetLeaderboardResult result)
 	{
+		m_LeaderboardStatistics.Clear();
+		foreach (Transform child in content.transform)
+		{
+			Destroy(child.gameObject);
+		}
 		foreach (var item in result.Leaderboard)
 		{
 			m_LeaderboardStatistics.Add(Instantiate(leaderboardStatisticPrefab, content));
-			SetLeaderboard(item.Position, item.PlayFabId, item.StatValue);
-			Debug.Log(string.Format(("{0} {1} {2}"), item.Position, item.PlayFabId, item.StatValue));
+			SetLeaderboard(item.Position, item.DisplayName, item.StatValue);
+			Debug.Log(string.Format(("{0} {1} {2}"), item.Position, item.DisplayName, item.StatValue));
 		}
 	}
 
@@ -46,7 +51,7 @@ public class Leaderboard : MonoBehaviour
 			statsItem.playerId.color = Color.red;
 			statsItem.score.color = Color.red;
 		}
-		statsItem.rank.text = rank.ToString();
+		statsItem.rank.text = (rank + 1).ToString();
 		statsItem.playerId.text = id;
 		statsItem.score.text = score.ToString();
 	}

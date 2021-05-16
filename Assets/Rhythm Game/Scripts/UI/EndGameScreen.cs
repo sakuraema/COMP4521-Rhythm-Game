@@ -16,7 +16,6 @@ public class EndGameScreen : MonoBehaviour
 	public Button leaderboardButton;
 	public Button backButton;
 	public Leaderboard leaderboard;
-	public LevelLoadingScreen loadingScreen;
 
 	private Canvas m_Canvas;
 	private int m_TotalScore;
@@ -55,6 +54,10 @@ public class EndGameScreen : MonoBehaviour
 			Initialize();
 			PlayFabManager.instance.SendLeaderboard(m_TotalScore);
 			leaderboard.GetLeaderboard();
+		});
+		backButton.onClick.AddListener(() =>
+		{
+			StartCoroutine(LevelManager.instance.LoadSceneAsync(0));
 		});
 	}
 }

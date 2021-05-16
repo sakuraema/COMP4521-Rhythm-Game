@@ -13,6 +13,12 @@ public class MusicPlayer : Singleton<MusicPlayer>
     private Timer m_DelayTimer;
 	private AudioSource m_AudioSource;
 
+	private void OnMusicEndCallback()
+	{
+		onMusicEnd.Invoke();
+		m_DelayTimer = null;
+	}
+
 	protected override void Awake()
     {
 		base.Awake();
@@ -21,7 +27,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         m_DelayTimer = new Timer(startDelay, () =>
 		{
 			m_AudioSource.Play();
-			m_DelayTimer = new Timer(m_AudioSource.clip.length + endDelay, () => onMusicEnd.Invoke());
+			m_DelayTimer = new Timer(m_AudioSource.clip.length + endDelay, OnMusicEndCallback);
 		});
     }
 

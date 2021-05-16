@@ -6,6 +6,7 @@ using Core.Data;
 public class GameDataStore : GameDataStoreBase
 {
 	public float scrollSpeed = 10f;
+	public string displayName = "Player";
 
 	/// <summary>
 	/// Outputs to debug

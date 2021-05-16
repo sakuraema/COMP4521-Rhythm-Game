@@ -4,15 +4,41 @@ using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
 using Core.Utilities;
+using System;
 
 public class PlayFabManager : PersistentSingleton<PlayFabManager>
 {
-	void Start()
+	public void SendLeaderboard(int score)
 	{
-		Login();
+		var request = new UpdatePlayerStatisticsRequest
+		{
+			Statistics = new List<StatisticUpdate>
+			{
+				new StatisticUpdate
+				{
+					StatisticName = SceneManager.GetActiveScene().name,
+					Value = score
+				}
+			}
+		};
+		PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
 	}
 
-	void Login()
+	public void UpdateDisplayName(string name)
+	{
+		var request = new UpdateUserTitleDisplayNameRequest
+		{
+			DisplayName = name
+		};
+		PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+	}
+
+	private void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult obj)
+	{
+		Debug.Log("Update display name success");
+	}
+
+	private void Login()
 	{
 		var request = new LoginWithCustomIDRequest();
 		request.CustomId = SystemInfo.deviceUniqueIdentifier;
@@ -37,19 +63,8 @@ public class PlayFabManager : PersistentSingleton<PlayFabManager>
 		Debug.Log("Leaderboard sent successfully");
 	}
 
-	public void SendLeaderboard(int score)
+	private void Start()
 	{
-		var request = new UpdatePlayerStatisticsRequest
-		{
-			Statistics = new List<StatisticUpdate>
-			{
-				new StatisticUpdate
-				{
-					StatisticName = SceneManager.GetActiveScene().name,
-					Value = score
-				}
-			}
-		};
-		PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
+		Login();
 	}
 }

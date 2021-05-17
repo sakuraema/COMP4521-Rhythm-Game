@@ -15,14 +15,17 @@ public class Detector : MonoBehaviour
 			if (note.Score == Note.ScoringValue.Perfect)
 			{
 				ScoreManager.instance.PerfectCount++;
+				PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Perfect, transform.position, Quaternion.identity);
 			}
 			else if (note.Score == Note.ScoringValue.Good)
 			{
 				ScoreManager.instance.GoodCount++;
+				PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Great, transform.position, Quaternion.identity);
 			}
 			else
 			{
 				ScoreManager.instance.MissedCount++;
+				PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Miss, transform.position, Quaternion.identity);
 			}
 			note.gameObject.SetActive(false);
 			Destroy(note.gameObject);

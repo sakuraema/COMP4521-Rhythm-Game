@@ -6,32 +6,50 @@ public class Detector : MonoBehaviour
 {
 	private List<Note> m_Notes = new List<Note>();
 
+	public bool IsHoldingLongNote
+	{
+		get
+		{
+			if (m_Notes.Count <= 0) return false;
+			else
+			{
+				var note = m_Notes[0] as LongNote;
+				if (note == null) return false;
+				if (note.Triggered && note.Pressing) return true;
+				else return false;
+			}
+		}
+	}
 	public List<Note> Notes { get => m_Notes; set => m_Notes = value; }
 
-	public void Remove(Note note)
+	public void Remove(Note note, bool isDestroy = true)
 	{
-		m_Notes.Remove(note);
+		if (m_Notes.Remove(note))
+		{
+			if (note.Score == Note.ScoringValue.Perfect)
+			{
+				LevelManager.instance.PerfectCount++;
+				PopUpManager.instance.ShowPopUp(PopUpManager.PopUpType.Perfect, transform.position, Quaternion.identity);
+				ComboCounter.instance.IncreaseCombo();
+			}
+			else if (note.Score == Note.ScoringValue.Good)
+			{
+				LevelManager.instance.GoodCount++;
+				PopUpManager.instance.ShowPopUp(PopUpManager.PopUpType.Great, transform.position, Quaternion.identity);
+				ComboCounter.instance.IncreaseCombo();
+			}
+			else
+			{
+				LevelManager.instance.MissedCount++;
+				PopUpManager.instance.ShowPopUp(PopUpManager.PopUpType.Miss, transform.position, Quaternion.identity);
+				ComboCounter.instance.ResetCombo();
+			}
+		}
 
-		if (note.Score == Note.ScoringValue.Perfect)
+		if (isDestroy)
 		{
-			ScoreManager.instance.PerfectCount++;
-			PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Perfect, transform.position, Quaternion.identity);
-			ComboCounter.instance.IncreaseCombo();
+			Destroy(note.gameObject);
 		}
-		else if (note.Score == Note.ScoringValue.Good)
-		{
-			ScoreManager.instance.GoodCount++;
-			PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Great, transform.position, Quaternion.identity);
-			ComboCounter.instance.IncreaseCombo();
-		}
-		else
-		{
-			ScoreManager.instance.MissedCount++;
-			PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Miss, transform.position, Quaternion.identity);
-			ComboCounter.instance.ResetCombo();
-		}
-		note.gameObject.SetActive(false);
-		Destroy(note.gameObject);
 		//Debug.Log("Remove note");
 	}
 

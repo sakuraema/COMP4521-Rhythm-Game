@@ -1262,7 +1262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Good:'
+  m_Text: 'Great:'
 --- !u!1 &3840402866211870311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1527,6 @@ MonoBehaviour:
   leaderboardButton: {fileID: 3840402867142026090}
   backButton: {fileID: 3840402865853704710}
   leaderboard: {fileID: 3840402867237556286}
-  loadingScreen: {fileID: 0}
 --- !u!222 &3840402866481591485
 CanvasRenderer:
   m_ObjectHideFlags: 0

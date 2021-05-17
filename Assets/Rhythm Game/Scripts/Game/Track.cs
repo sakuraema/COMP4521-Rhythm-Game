@@ -1,3 +1,4 @@
+using Core.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class Track : MonoBehaviour
 
 	private float m_PerfectDistance;
 	private float m_EffectiveDistance;
+	private RepeatingTimer m_ComboTimer;
+	private LongNote m_CurrentHoldingLongNote;
 
 	bool IsMouseOnTrack
 	{
@@ -58,6 +61,19 @@ public class Track : MonoBehaviour
 		}
 	}
 
+	void HoldNote()
+	{
+		if (detector.IsHoldingLongNote)
+		{
+			if (m_ComboTimer == null)
+				m_ComboTimer = new RepeatingTimer(0.1f, ComboCounter.instance.IncreaseCombo);
+		}
+		else
+		{
+			m_ComboTimer = null;
+		}
+	}
+
 	void ReleaseNote()
 	{
 		if (detector.Notes.Count <= 0) return;
@@ -67,8 +83,9 @@ public class Track : MonoBehaviour
 
 		if (longNote && longNote.Triggered)
 		{
+			m_ComboTimer = null; // Force reset timer when release long note
 			longNote.Pressing = false;
-			detector.Notes.Remove(longNote);
+			detector.Remove(longNote, false);
 		}
 	}
 
@@ -86,6 +103,7 @@ public class Track : MonoBehaviour
 
 	protected void Update()
 	{
+		m_ComboTimer?.Tick(Time.deltaTime);
 		// Keyboard and mouse input
 #if UNITY_EDITOR
 		if ((Input.GetMouseButtonDown(0) && IsMouseOnTrack) || Input.GetKeyDown(key))
@@ -96,6 +114,7 @@ public class Track : MonoBehaviour
 		if ((Input.GetMouseButton(0) && IsMouseOnTrack) || Input.GetKey(key))
 		{
 			GetComponent<Renderer>().material = selected;
+			HoldNote();
 		}
 		else
 		{
@@ -120,6 +139,7 @@ public class Track : MonoBehaviour
 		if (isAnyTouchOnTrack)
 		{
 			GetComponent<Renderer>().material = selected;
+			HoldNote();
 		}
 		else
 		{

@@ -14,7 +14,7 @@ public class ScoreUI : MonoBehaviour
 	{
 		if (m_OnProgress)
 		{
-			long totalScore = ScoreManager.instance.PerfectCount * 300 + ScoreManager.instance.GoodCount * 100;
+			long totalScore = LevelManager.instance.PerfectCount * 300 + LevelManager.instance.GoodCount * 100;
 			score.text = totalScore.ToString("D9");
 
 			var musicSource = MusicPlayer.instance.GetComponent<AudioSource>();

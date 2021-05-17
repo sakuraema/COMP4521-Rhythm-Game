@@ -54121,6 +54121,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1688792132}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1689285376
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331665, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289586034613331667, guid: aaf4ac6b4b8705a439308660ca6ce3ac,
+        type: 3}
+      propertyPath: m_Name
+      value: Glow Effect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aaf4ac6b4b8705a439308660ca6ce3ac, type: 3}
 --- !u!1001 &1689300256
 PrefabInstance:
   m_ObjectHideFlags: 0

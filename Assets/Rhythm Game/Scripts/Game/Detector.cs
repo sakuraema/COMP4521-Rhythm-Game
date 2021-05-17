@@ -16,16 +16,19 @@ public class Detector : MonoBehaviour
 			{
 				ScoreManager.instance.PerfectCount++;
 				PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Perfect, transform.position, Quaternion.identity);
+				ComboCounter.instance.IncreaseCombo();
 			}
 			else if (note.Score == Note.ScoringValue.Good)
 			{
 				ScoreManager.instance.GoodCount++;
 				PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Great, transform.position, Quaternion.identity);
+				ComboCounter.instance.IncreaseCombo();
 			}
 			else
 			{
 				ScoreManager.instance.MissedCount++;
 				PopUpImage.instance.ShowPopUp(PopUpImage.PopUpType.Miss, transform.position, Quaternion.identity);
+				ComboCounter.instance.ResetCombo();
 			}
 			note.gameObject.SetActive(false);
 			Destroy(note.gameObject);

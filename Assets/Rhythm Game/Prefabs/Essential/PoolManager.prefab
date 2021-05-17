@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolables:
   - {fileID: 3509433843573451495, guid: 32dc091ee781ef046871123f0b8ad398, type: 3}
+  - {fileID: -5670069063622757200, guid: f686d4e2315fdfe4f9ab936313bc6e46, type: 3}
+  - {fileID: -6469396796626741122, guid: 449570c525ec0074298fbd73c9990a18, type: 3}
+  - {fileID: -1602444875917404738, guid: 39c25032e90980041b6aa5b4870448a0, type: 3}

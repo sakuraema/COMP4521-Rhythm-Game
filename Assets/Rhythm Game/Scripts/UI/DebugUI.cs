@@ -12,8 +12,8 @@ public class DebugUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		perfectCount.text = ScoreManager.instance.PerfectCount.ToString();
-		goodCount.text = ScoreManager.instance.GoodCount.ToString();
-		missedCount.text = ScoreManager.instance.MissedCount.ToString();
+		perfectCount.text = LevelManager.instance.PerfectCount.ToString();
+		goodCount.text = LevelManager.instance.GoodCount.ToString();
+		missedCount.text = LevelManager.instance.MissedCount.ToString();
     }
 }

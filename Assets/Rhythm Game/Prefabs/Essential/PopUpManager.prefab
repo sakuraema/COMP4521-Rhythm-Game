@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb882ea2b3a43494583bc6e97101a854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfect: {fileID: 4277683506178646086, guid: f686d4e2315fdfe4f9ab936313bc6e46, type: 3}
-  great: {fileID: 3502568278979819173, guid: 449570c525ec0074298fbd73c9990a18, type: 3}
-  miss: {fileID: 5134823308776976488, guid: 39c25032e90980041b6aa5b4870448a0, type: 3}
+  perfect: {fileID: -5670069063622757200, guid: f686d4e2315fdfe4f9ab936313bc6e46,
+    type: 3}
+  great: {fileID: -6469396796626741122, guid: 449570c525ec0074298fbd73c9990a18, type: 3}
+  miss: {fileID: -1602444875917404738, guid: 39c25032e90980041b6aa5b4870448a0, type: 3}

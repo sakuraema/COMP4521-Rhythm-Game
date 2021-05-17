@@ -22,7 +22,7 @@ public class EndGameScreen : MonoBehaviour
 
 	private void Initialize()
 	{
-		var scoreManager = ScoreManager.instance;
+		var scoreManager = LevelManager.instance;
 		perfectCount.text = scoreManager.PerfectCount.ToString();
 		goodCount.text = scoreManager.GoodCount.ToString();
 		missedCount.text = scoreManager.MissedCount.ToString();

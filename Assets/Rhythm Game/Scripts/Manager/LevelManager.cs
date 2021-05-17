@@ -8,6 +8,10 @@ public class LevelManager : Singleton<LevelManager>
 {
 	public LevelLoadingScreen loadingScreen;
 
+	public int PerfectCount { get; set; }
+	public int GoodCount { get; set; }
+	public int MissedCount { get; set; }
+
 	public void LoadScene(string sceneName)
 	{
 		SceneManager.LoadScene(sceneName);

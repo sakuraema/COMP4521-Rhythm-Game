@@ -65,9 +65,10 @@ public class Track : MonoBehaviour
 		// Only LongNote can be released
 		var longNote = detector.Notes[0] as LongNote;
 
-		if (longNote)
+		if (longNote && longNote.Triggered)
 		{
 			longNote.Pressing = false;
+			detector.Notes.Remove(longNote);
 		}
 	}
 

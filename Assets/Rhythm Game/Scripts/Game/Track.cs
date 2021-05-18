@@ -72,7 +72,10 @@ public class Track : MonoBehaviour
 		if (detector.IsHoldingLongNote)
 		{
 			if (m_ComboTimer == null)
-				m_ComboTimer = new RepeatingTimer(0.1f, ComboCounter.instance.IncreaseCombo);
+				m_ComboTimer = new RepeatingTimer(0.1f, () => {
+					LevelManager.instance.Score += 50;
+					ComboCounter.instance.IncreaseCombo();
+				});
 		}
 		else
 		{

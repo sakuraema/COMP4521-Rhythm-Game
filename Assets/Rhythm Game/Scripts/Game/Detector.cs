@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Detector : MonoBehaviour
 {
+	static private readonly int SCORE_SCALING_FACTOR = 50;
 	private List<Note> m_Notes = new List<Note>();
 
 	public bool IsHoldingLongNote
@@ -29,12 +30,14 @@ public class Detector : MonoBehaviour
 			if (note.Score == Note.ScoringValue.Perfect)
 			{
 				LevelManager.instance.PerfectCount++;
+				LevelManager.instance.Score += 300 + 300 * ComboCounter.instance.Combo / SCORE_SCALING_FACTOR;
 				PopUpManager.instance.ShowPopUp(PopUpManager.PopUpType.Perfect, transform.position, Quaternion.identity);
 				ComboCounter.instance.IncreaseCombo();
 			}
 			else if (note.Score == Note.ScoringValue.Good)
 			{
 				LevelManager.instance.GoodCount++;
+				LevelManager.instance.Score += 150 + 150 * ComboCounter.instance.Combo / SCORE_SCALING_FACTOR;
 				PopUpManager.instance.ShowPopUp(PopUpManager.PopUpType.Great, transform.position, Quaternion.identity);
 				ComboCounter.instance.IncreaseCombo();
 			}

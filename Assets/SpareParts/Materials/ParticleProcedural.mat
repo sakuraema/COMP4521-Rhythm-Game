@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParticleProcedural
+  m_Shader: {fileID: 4800000, guid: 541fcad1be68b8e4090631345b7e27d5, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _textureAlbedo:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _textureEmission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - __dirty: 0
+    - _metalness: 0
+    - _noiseScale: 16
+    - _offsetX: -0.5
+    - _offsetY: -0.5
+    - _smoothStepAlbedoMax: -0.125
+    - _smoothStepAlbedoMin: 0.75
+    - _smoothStepEmissionMax: -0.125
+    - _smoothStepEmissonMin: 0.5
+    - _smoothness: 0
+    - _softness: 0.025
+    - _softnessRange: 0.125
+    - _tillingX: 1
+    - _tillingY: 1
+    m_Colors:
+    - _colorAlbedo: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
+    - _colorEmission: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}

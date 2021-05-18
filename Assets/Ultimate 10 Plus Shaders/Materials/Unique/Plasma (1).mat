@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Cull: 2
+    - _Cull: 1
     m_Colors:
-    - _Color: {r: 118.035385, g: 1.2359726, b: 0, a: 1}
+    - _Color: {r: 10.142987, g: 4.159354, b: 13.937486, a: 1}
     - _MovementDirection: {r: 0, g: -0.1, b: 0, a: 1}

@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - id: 1
-    name: Tera
+    name: Xomu - Tera
     description: 
     sceneName: Tera
   - id: 2
-    name: Iron Princess
+    name: Xomu & HYP3RLAPS3 - Iron Princess
     description: 
     sceneName: Iron Princess
   - id: 3
-    name: Lumina
+    name: Wisp X & Xomu - Lumina
     description: 
     sceneName: Lumina
   - id: 4
-    name: Setsuna
+    name: Xomu & Justin Klyvis - Setsuna
     description: 
     sceneName: Setsuna

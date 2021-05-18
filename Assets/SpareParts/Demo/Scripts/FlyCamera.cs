@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class FlyCamera : MonoBehaviour
@@ -29,7 +29,6 @@ public class FlyCamera : MonoBehaviour
 			lastMouse = Input.mousePosition;
 		}
 
-		var f = 0.0f;
 		var p = GetBaseInput ( );
 		if ( Input.GetKey ( KeyCode.LeftShift ) )
 		{

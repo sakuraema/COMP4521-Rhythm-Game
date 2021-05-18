@@ -11,6 +11,7 @@ public class LevelManager : Singleton<LevelManager>
 	public int PerfectCount { get; set; }
 	public int GoodCount { get; set; }
 	public int MissedCount { get; set; }
+	public int Score { get; set; }
 
 	public void LoadScene(string sceneName)
 	{

@@ -18,20 +18,18 @@ public class EndGameScreen : MonoBehaviour
 	public Leaderboard leaderboard;
 
 	private Canvas m_Canvas;
-	private int m_TotalScore;
 
 	private void Initialize()
 	{
-		var scoreManager = LevelManager.instance;
-		perfectCount.text = scoreManager.PerfectCount.ToString();
-		goodCount.text = scoreManager.GoodCount.ToString();
-		missedCount.text = scoreManager.MissedCount.ToString();
+		perfectCount.text = LevelManager.instance.PerfectCount.ToString();
+		goodCount.text = LevelManager.instance.GoodCount.ToString();
+		missedCount.text = LevelManager.instance.MissedCount.ToString();
 
-		m_TotalScore = scoreManager.PerfectCount * 300 + scoreManager.GoodCount * 100;
-		score.text = m_TotalScore.ToString();
+		score.text = LevelManager.instance.Score.ToString();
 
-		var maxScore = (scoreManager.PerfectCount + scoreManager.GoodCount + scoreManager.MissedCount) * 300f;
-		var percentage = m_TotalScore / maxScore;
+		float totalNote = LevelManager.instance.PerfectCount + LevelManager.instance.MissedCount + LevelManager.instance.GoodCount;
+		var percentage = LevelManager.instance.PerfectCount / totalNote * 1f
+			+ LevelManager.instance.GoodCount / totalNote * 0.5f;
 		if (percentage > .95f)
 			rank.sprite = rankSprites[0]; // S
 		else if (percentage > .9f)
@@ -52,7 +50,7 @@ public class EndGameScreen : MonoBehaviour
 		{
 			m_Canvas.enabled = true;
 			Initialize();
-			PlayFabManager.instance.SendLeaderboard(m_TotalScore);
+			PlayFabManager.instance.SendLeaderboard(LevelManager.instance.Score);
 			leaderboard.GetLeaderboard();
 		});
 		backButton.onClick.AddListener(() =>

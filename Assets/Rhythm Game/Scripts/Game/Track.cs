@@ -12,9 +12,11 @@ public class Track : MonoBehaviour
 	public Detector detector;
 	public KeyCode key;
 	public LayerMask trackLayer;
+	public ParticleSystem pressEffect;
 	public bool dynamicDetectorSize = true;
 
 	private float m_PerfectDistance;
+	private float m_GoodDistance;
 	private float m_EffectiveDistance;
 	private RepeatingTimer m_ComboTimer;
 	private LongNote m_CurrentHoldingLongNote;
@@ -48,7 +50,11 @@ public class Track : MonoBehaviour
 			var singleNote = note as SingleNote;
 			float distance = Mathf.Abs(note.transform.position.z);
 
-			singleNote.Hit(distance < m_PerfectDistance);
+			if (distance < m_GoodDistance)
+			{
+				singleNote.Hit(distance < m_PerfectDistance);
+			}
+			
 			detector.Remove(note);
 		}
 		else
@@ -91,8 +97,9 @@ public class Track : MonoBehaviour
 
 	protected void Awake()
 	{
-		m_EffectiveDistance = Scroller.instance.Speed / EFFECTIVE_DISTANCE_FACTOR / 2f;
-		m_PerfectDistance = m_EffectiveDistance / 2f;
+		m_GoodDistance = Scroller.instance.Speed / EFFECTIVE_DISTANCE_FACTOR / 2f;
+		m_PerfectDistance = m_GoodDistance / 2f;
+		m_EffectiveDistance = m_GoodDistance / 2f * 3f;
 
 		if (dynamicDetectorSize)
 		{

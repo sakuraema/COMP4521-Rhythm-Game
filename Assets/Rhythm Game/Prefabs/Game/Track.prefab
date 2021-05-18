@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &763979444711971490
 Transform:
@@ -115,6 +115,7 @@ MonoBehaviour:
   trackLayer:
     serializedVersion: 2
     m_Bits: 256
+  pressEffect: {fileID: 0}
   dynamicDetectorSize: 1
 --- !u!1 &788064885629948925
 GameObject:

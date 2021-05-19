@@ -71,6 +71,7 @@ public class LevelSelectMenu : SimpleMainMenuPage
 				{
 					m_SelectedSceneName = level.sceneName;
 					background.sprite = level.previewImage;
+					background.GetComponent<AspectRatioFitter>().aspectRatio = level.previewImage.rect.width / level.previewImage.rect.height;
 					StartCoroutine(FadeIn());
 					m_AudioPlayer.Stop();
 					m_AudioPlayer.clip = level.previewClip;

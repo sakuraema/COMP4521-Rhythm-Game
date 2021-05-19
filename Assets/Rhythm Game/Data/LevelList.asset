@@ -15,21 +15,26 @@ MonoBehaviour:
   levels:
   - id: 1
     name: Xomu - Tera
-    description: 
+    previewClip: {fileID: 8300000, guid: b0ff1fd1dd6bd084f9e95da2b4b5b62e, type: 3}
+    previewImage: {fileID: 21300000, guid: 4c24f0ee1387d9a4aa1e96f2d38ed7e4, type: 3}
     sceneName: Tera
   - id: 2
     name: Xomu & HYP3RLAPS3 - Iron Princess
-    description: 
+    previewClip: {fileID: 8300000, guid: 971b63bdf9f0b054ca9957a8dc803eb7, type: 3}
+    previewImage: {fileID: 21300000, guid: a1ad3a77c47415142a0e173ba4653a8d, type: 3}
     sceneName: Iron Princess
   - id: 3
     name: Wisp X & Xomu - Lumina
-    description: 
+    previewClip: {fileID: 8300000, guid: 8459fcf5950a10f4a885455f6cc1e26e, type: 3}
+    previewImage: {fileID: 21300000, guid: 3ac05b90798aa9e45b7ca7ae1683e3af, type: 3}
     sceneName: Lumina
   - id: 4
     name: Xomu & Justin Klyvis - Setsuna
-    description: 
+    previewClip: {fileID: 8300000, guid: 6f81d4c34a198e246a01a79773cfe05e, type: 3}
+    previewImage: {fileID: 21300000, guid: 1638137933bc62147bd4b68dc6a1362b, type: 3}
     sceneName: Setsuna
   - id: 5
     name: Xomu & Retrograde - Airborne
-    description: 
+    previewClip: {fileID: 8300000, guid: 18b86026aa464ea41a4817cb50408a45, type: 3}
+    previewImage: {fileID: 21300000, guid: d60f52c302ec65f45a94b8874acc10da, type: 3}
     sceneName: Airborne

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8741379961312732082}
   - component: {fileID: 8741379961312732081}
   m_Layer: 0
-  m_Name: Beat Line
+  m_Name: Empty Beat Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 20f3943b8386ca749acc726ada2eed88, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

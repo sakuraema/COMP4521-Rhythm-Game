@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using UnityEngine;
 
 namespace Core.Game
 {
@@ -18,10 +19,8 @@ namespace Core.Game
 		/// </summary>
 		public string name;
 
-		/// <summary>
-		/// The description of the level - flavour text
-		/// </summary>
-		public string description;
+		public AudioClip previewClip;
+		public Sprite previewImage;
 
 		/// <summary>
 		/// The name of the scene to load

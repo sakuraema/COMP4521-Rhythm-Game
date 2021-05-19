@@ -12,7 +12,8 @@ public class Track : MonoBehaviour
 	public Detector detector;
 	public KeyCode key;
 	public LayerMask trackLayer;
-	public ParticleSystem pressEffect;
+	public ParticleSystem longEffect;
+	public ParticleSystem shortEffect;
 	public bool dynamicDetectorSize = true;
 
 	private float m_PerfectDistance;
@@ -53,8 +54,9 @@ public class Track : MonoBehaviour
 			if (distance < m_GoodDistance)
 			{
 				singleNote.Hit(distance < m_PerfectDistance);
+				shortEffect.Play();
 			}
-			
+
 			detector.Remove(note);
 		}
 		else
@@ -76,10 +78,12 @@ public class Track : MonoBehaviour
 					LevelManager.instance.Score += 50;
 					ComboCounter.instance.IncreaseCombo();
 				});
+			if (!longEffect.isPlaying) longEffect.Play();
 		}
 		else
 		{
 			m_ComboTimer = null;
+			if (!longEffect.isStopped) longEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 		}
 	}
 
@@ -130,6 +134,7 @@ public class Track : MonoBehaviour
 		{
 			GetComponent<Renderer>().material = original;
 			ReleaseNote();
+			if (!longEffect.isStopped) longEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 		}
 #elif UNITY_IOS || UNITY_ANDROID
 		// Touch input

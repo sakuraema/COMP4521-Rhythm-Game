@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Rhythm Game/Scenes/Setsuna.unity
     guid: ceed45497c3774a4cadb9ff1aa3fca01
+  - enabled: 1
+    path: Assets/Rhythm Game/Scenes/Airborne.unity
+    guid: 90945b26cc0ee5843952be3215c15b8f
   m_configObjects: {}

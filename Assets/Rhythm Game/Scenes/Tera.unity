@@ -86926,11 +86926,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 763979444711971490, guid: 1c94c90211d0e434d817cbf3530ecb62,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.19999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 763979444711971490, guid: 1c94c90211d0e434d817cbf3530ecb62,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
       objectReference: {fileID: 0}
@@ -86983,16 +86978,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Track Plane
-      objectReference: {fileID: 0}
-    - target: {fileID: 763979444711971494, guid: 1c94c90211d0e434d817cbf3530ecb62,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 788064885629948925, guid: 1c94c90211d0e434d817cbf3530ecb62,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c94c90211d0e434d817cbf3530ecb62, type: 3}

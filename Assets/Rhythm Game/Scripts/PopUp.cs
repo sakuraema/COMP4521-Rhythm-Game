@@ -20,6 +20,11 @@ public class PopUp : MonoBehaviour
 		PoolManager.instance.ReturnPoolable(this.GetComponent<Poolable>());
 	}
 
+	private void Update()
+	{
+		transform.LookAt(Camera.main.transform);
+	}
+
 	private void Awake()
 	{
 		m_Animator = GetComponent<Animator>();

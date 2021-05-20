@@ -14,28 +14,50 @@ public class PauseMenu : MonoBehaviour
 
 	private AudioSource m_AudioSource;
 
+	void Pause()
+	{
+		blocker.enabled = true;
+		Time.timeScale = 0f;
+		m_AudioSource.Pause();
+		isOn = true;
+	}
+
+	void UnPause()
+	{
+		blocker.enabled = false;
+		Time.timeScale = 1f;
+		m_AudioSource.UnPause();
+		isOn = false;
+	}
+
+	void BackToMainMenu()
+	{
+		Time.timeScale = 1f;
+		isOn = false;
+		StartCoroutine(LevelManager.instance.LoadSceneAsync(0));
+	}
+
 	private void Awake()
 	{
 		m_AudioSource = Camera.main.GetComponent<AudioSource>();
-		pauseButton.onClick.AddListener(() => {
-			blocker.enabled = true;
-			Time.timeScale = 0f;
-			m_AudioSource.Pause();
-			isOn = true;
-		});
-		homeButton.onClick.AddListener(() =>
-		{
-			Time.timeScale = 1f;
-			isOn = false;
-			StartCoroutine(LevelManager.instance.LoadSceneAsync(0));
-		});
-		playButton.onClick.AddListener(() =>
-		{
-			blocker.enabled = false;
-			Time.timeScale = 1f;
-			m_AudioSource.UnPause();
-			isOn = false;
-		});
+		pauseButton.onClick.AddListener(Pause);
+		playButton.onClick.AddListener(UnPause);
+		homeButton.onClick.AddListener(BackToMainMenu);
 		blocker.enabled = false;
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if (isOn)
+			{
+				UnPause();
+			}
+			else
+			{
+				Pause();
+			}
+		}
 	}
 }

@@ -8,22 +8,14 @@ public class ScoreUI : MonoBehaviour
 	public Slider progressBar;
 	public Text score;
 
-	private bool m_OnProgress = true;
-
 	protected void Update()
 	{
-		if (m_OnProgress)
-		{
-			long totalScore = LevelManager.instance.Score;
-			score.text = totalScore.ToString("D9");
+		long totalScore = LevelManager.instance.Score;
+		score.text = totalScore.ToString("D9");
 
-			var musicSource = MusicPlayer.instance.GetComponent<AudioSource>();
-			progressBar.value = musicSource.time / musicSource.clip.length;
-
-			if (progressBar.value == 1f)
-			{
-				m_OnProgress = false;
-			} 
-		}
+		var musicSource = MusicPlayer.instance.GetComponent<AudioSource>();
+		var progress = musicSource.time / musicSource.clip.length;
+		if (progressBar.value < progress)
+			progressBar.value = progress;
 	}
 }

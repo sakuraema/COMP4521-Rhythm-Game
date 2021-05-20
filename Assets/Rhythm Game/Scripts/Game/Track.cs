@@ -117,6 +117,7 @@ public class Track : MonoBehaviour
 
 	protected void Update()
 	{
+		if (PauseMenu.isOn) return;
 		m_ComboTimer?.Tick(Time.deltaTime);
 		// Keyboard and mouse input
 #if UNITY_EDITOR

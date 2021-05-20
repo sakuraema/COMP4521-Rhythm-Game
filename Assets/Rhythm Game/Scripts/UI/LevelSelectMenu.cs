@@ -18,9 +18,13 @@ public class LevelSelectMenu : SimpleMainMenuPage
 	{
 		base.Hide();
 
-		m_AudioPlayer.Stop();
-		m_AudioPlayer.clip = m_OriginalClip;
-		m_AudioPlayer.Play();
+		if (!m_AudioPlayer.clip.Equals(m_OriginalClip))
+		{
+			m_AudioPlayer.Stop();
+			m_AudioPlayer.clip = m_OriginalClip;
+			m_AudioPlayer.Play();
+		}
+
 		m_SelectedSceneName = "";
 
 		StartCoroutine(FadeOut());

@@ -28,4 +28,19 @@ public class RhythmGameMainMenu : MainMenu
 	{
 		ShowMainMenu();
 	}
+
+	protected virtual void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if ((SimpleMainMenuPage)m_CurrentPage == mainMenu)
+			{
+				Application.Quit();
+			}
+			else
+			{
+				Back();
+			}
+		}
+	}
 }

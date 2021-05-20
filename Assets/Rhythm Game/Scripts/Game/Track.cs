@@ -161,6 +161,7 @@ public class Track : MonoBehaviour
 		{
 			GetComponent<Renderer>().material = original;
 			ReleaseNote();
+			if (!longEffect.isStopped) longEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
 		}
 #endif
 	}

@@ -43090,6 +43090,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 261128892579382029, guid: 0a8357dc40c4ce641887ac27bb898f2f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 261128892977924349, guid: 0a8357dc40c4ce641887ac27bb898f2f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -72214,14 +72219,14 @@ MonoBehaviour:
     m_Bits: 1024
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 2
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.95
     sharpness: 1
     stationaryBlending: 0.95
     motionBlending: 0.95
   subpixelMorphologicalAntialiasing:
-    quality: 2
+    quality: 0
   fastApproximateAntialiasing:
     fastMode: 0
     keepAlpha: 0
@@ -89864,6 +89869,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1848145515374852945, guid: b2b9656f0d3225d4286fd0bbf422f999,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1848145515472452101, guid: b2b9656f0d3225d4286fd0bbf422f999,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -89922,6 +89932,11 @@ PrefabInstance:
     - target: {fileID: 1848145515621085404, guid: b2b9656f0d3225d4286fd0bbf422f999,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3021026384366804010, guid: b2b9656f0d3225d4286fd0bbf422f999,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7192329974248332505, guid: b2b9656f0d3225d4286fd0bbf422f999,
